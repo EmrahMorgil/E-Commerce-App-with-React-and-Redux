@@ -2,15 +2,14 @@ import React from "react";
 import "./styles/App.css";
 import Navbar from "./components/Navbar";
 import { Route, Routes } from "react-router-dom";
-import Home from "./pages/Products";
 import Basket from "./pages/Basket";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Users from "./pages/Users";
-import FocusItem from "./pages/FocusItem";
 import { useSelector } from "react-redux";
 import { RootState } from "./redux/store";
 import Products from "./pages/Products";
+import FocusProject from "./pages/FocusProject";
 
 function App() {
   const theme = useSelector((state: RootState) => state.theme.theme);
@@ -26,7 +25,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/users" element={userLoggedIn && <Users />} />
-          <Route path="/product/:id" element={<FocusItem />} />
+          <Route path="/product/:id" element={<FocusProject />} />
         </Routes>
       </div>
     </>

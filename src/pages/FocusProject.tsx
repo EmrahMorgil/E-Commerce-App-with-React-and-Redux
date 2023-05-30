@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { homeItem } from "../types/Type";
 
-const FocusItem: React.FC = () => {
+const FocusProject: React.FC = () => {
   const [clickedData, setClickedData] = useState<homeItem>({id: 0, photo: "", name: "", price: "", amount: 0});
 
   let { id } = useParams();
@@ -38,4 +38,4 @@ const FocusItem: React.FC = () => {
   );
 };
 
-export default FocusItem;
+export default FocusProject;

@@ -1,14 +1,13 @@
 import React from "react";
-import "../styles/App.css";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import { basketItemType, homeItem } from "../types/Type";
-import { basketAmount,deleteBasket,setBasket, setTotalPrice, addBasket } from "../redux/products/productsSlice";
+import { basketItemType, homeItem } from "../../types/Type";
+import { basketAmount,deleteBasket,setBasket, setTotalPrice, addBasket } from "../../redux/products/productsSlice";
 import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../redux/store";
+import { RootState } from "../../redux/store";
 
 
-const BasketItems: React.FC<basketItemType> = ({ product }) => {
+const BasketItem: React.FC<basketItemType> = ({ product }) => {
   const dispatch = useDispatch();
 
   const totalPrice = useSelector((state: RootState) => state.products?.totalPrice);
@@ -128,4 +127,4 @@ const BasketItems: React.FC<basketItemType> = ({ product }) => {
   );
 };
 
-export default BasketItems;
+export default BasketItem;
