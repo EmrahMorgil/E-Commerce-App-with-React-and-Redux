@@ -1,0 +1,173 @@
+
+/* Navbar */
+
+.navbar {
+	padding: 25px 150px;
+	display: flex;
+  }
+  
+  .navbar-count {
+	bottom: 45px;
+	position: absolute;
+	margin-left: 20px;
+	color: blue;
+  }
+  
+  .navbar-user {
+	color: black;
+	position: absolute;
+	margin: 0px 0px 0px 679px;
+  }
+  .navbar-admin {
+	color: red;
+	position: absolute;
+	margin: 16px 0px 0px 675px;
+  }
+  
+  .navbar-title-lightTheme{
+	color: #FF3200;
+  }
+  
+  .navbar-title-nightTheme{
+	color: white
+  }
+  
+
+
+
+  
+  /* Home */
+  .cards {
+	display: flex;
+	gap: 35px;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding: 0px 200px;
+  }
+
+  .loadingIcon{
+    width: 200px;
+    height: 200px;
+    animation: "spin 2s linear infinite";
+    -webkit-animation: spin 2s linear infinite; 
+  }
+
+  .loading{
+    text-align: center;
+    margin-top: 200px;
+  }
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+
+  
+  /* Items */
+  
+  .item {
+	display: flex;
+	flex-direction: column;
+  }
+  
+  .link-item {
+	text-align: center;
+	margin-top: 5rem;
+  }
+  .item-img {
+	width: 230px;
+	height: 200px;
+  }
+  
+  /* FocusItem */
+  .focusItem-card {
+	width: 500px;
+	text-align: center;
+	margin: auto;
+	margin-top: 30px;
+	border: 1px solid lightgrey;
+	padding: 30px;
+  }
+  
+  /* Login */
+  .login {
+	display: flex;
+	justify-content: center;
+	margin-top: 150px;
+	height: 66.7vh;
+  }
+  
+  .loginForm {
+	width: 300px;
+  }
+  
+  /* Admin */
+  .admin-page{
+	  padding: 50px;
+  }
+  
+  .admin-page form{
+	  display: flex;
+  }
+  
+  .admin-page-inputs{
+	  padding: 5px;
+  }
+  
+  .admin-page-items{
+	  
+	  padding: 20px;
+  }
+  
+  /* Admin-Items */
+  
+  .admin-items{
+	  margin-bottom: 45px;
+  }
+  
+  /* Basket */
+  
+  .basket{
+	  margin: 0px 40px;
+	  
+	  
+  }
+  .basket-total-price{
+	  margin-top: 45px;
+  }
+  
+  /* BasketItems */
+  .basket-item-img {
+	width: 230px;
+	height: 200px;
+  }
+  .basket-item-amount {
+	display: flex;
+  }
+  
+  
+  
+  
+  /* All elements */
+  .lightTheme{
+	color: black;
+  }
+  .nightTheme{
+	color: white;
+  }
+  .backgroundLightTheme{
+	background-color: white;
+  }
+  .backgroundNightTheme{
+	background-color: black;
+  }
+  .navbar-title-lightTheme:hover{
+	color:#FF3200;
+  }
+  .navbar-title-nightTheme:hover{
+	color: white;
+  }
