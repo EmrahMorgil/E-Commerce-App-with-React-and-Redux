@@ -6,8 +6,9 @@ import { UserType } from "../types/Type";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
 import { useSelector, useDispatch } from "react-redux";
-import { setRegisterControl, getUsersAsync, setUserLoggedIn, setWelcomeUser} from "../redux/users/usersSlice";
+import { setRegisterControl, setUserLoggedIn, setWelcomeUser} from "../redux/users/usersSlice";
 import { RootState } from "../redux/store";
+import { getUsersAsync } from "../services/userService";
 
 const Login: React.FC = () => {
   const dispatch = useDispatch();

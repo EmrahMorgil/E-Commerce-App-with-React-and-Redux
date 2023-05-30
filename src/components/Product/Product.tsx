@@ -1,12 +1,11 @@
-import "../styles/App.css";
 import { Link } from "react-router-dom";
-import { basketItemType, homeItem } from "../types/Type";
-import { setTotalPrice, addBasket, setBasket} from "../redux/products/productsSlice";
+import { basketItemType, homeItem } from "../../types/Type";
+import { setTotalPrice, addBasket, setBasket} from "../../redux/products/productsSlice";
 import { useSelector, useDispatch } from "react-redux";
-import { basketAmount } from "../redux/products/productsSlice";
-import { RootState } from "../redux/store";
+import { basketAmount } from "../../redux/products/productsSlice";
+import { RootState } from "../../redux/store";
 
-const Items: React.FC<basketItemType> = ({ product }) => {
+const Product: React.FC<basketItemType> = ({ product }) => {
   const dispatch = useDispatch();
 
   const { basket, totalPrice } = useSelector((state: RootState) => state.products);
@@ -65,4 +64,4 @@ const Items: React.FC<basketItemType> = ({ product }) => {
   );
 };
 
-export default Items;
+export default Product;

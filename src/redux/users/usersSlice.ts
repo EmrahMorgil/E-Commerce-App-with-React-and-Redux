@@ -1,17 +1,8 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import { createSlice } from "@reduxjs/toolkit";
 import { addUsersActionType, setRegisterControlActionType, 
   setUserLoggedInActionType, usersInitialStateType, 
   setWelcomeUserActionType, usersExtraReducerFullFilledType } from "../../types/Type";
-
-export const getUsersAsync: any = createAsyncThunk(
-  "users/getUsersAsync",
-  async () => {
-    const res = await axios.get("http://localhost:3004/users");
-    return res.data;
-  }
-);
-
+import { getUsersAsync } from "../../services/userService";
 
 const initialState: usersInitialStateType = {
   users: [],

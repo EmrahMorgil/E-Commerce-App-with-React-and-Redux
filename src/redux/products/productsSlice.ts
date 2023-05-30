@@ -1,5 +1,4 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import { createSlice } from "@reduxjs/toolkit";
 import {
   homeItem,
   productInitialStateType,
@@ -10,12 +9,9 @@ import {
   extraReducersFullFilledType,
   productsSetBasketActionType
 } from "../../types/Type";
+import { getProductsAsync } from "../../services/productService";
 
-export const getProductsAsync: any = createAsyncThunk("products/getProductsAsync",async () => {
-    const res = await axios.get("http://localhost:3004/products");
-    return res.data;
-  }
-);
+
 
 const initialState: productInitialStateType = {
   items: [],

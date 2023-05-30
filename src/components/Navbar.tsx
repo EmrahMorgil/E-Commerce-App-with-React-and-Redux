@@ -38,7 +38,7 @@ const Navbar: React.FC = () => {
       </div>
       <div className="navbar-brand">
         <Link
-          to="/"
+          to="/products"
           style={{ textDecoration: "none" }}
           className={
             theme ? `navbar-title-lightTheme` : `navbar-title-nightTheme`

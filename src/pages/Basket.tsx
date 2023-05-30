@@ -1,5 +1,5 @@
 import React from "react";
-import BasketItems from "./BasketItems";
+import BasketItems from "../components/BasketItems";
 import "../styles/App.css";
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from "react-toastify";
