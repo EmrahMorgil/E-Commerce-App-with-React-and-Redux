@@ -71,10 +71,9 @@ const Product: React.FC<basketItemType> = ({ product }) => {
             <div className="banner-image">
               <img src={product?.photo} style={{width: "200px", height: "200px"}}/>
             </div>
-            <h1>{product?.name}</h1>
+            <h4 style={{color: "white"}}>{product?.name}</h4>
             <p>
-              Lorem ipsum dolor sit amet, <br />
-              consectetur adipiscing elit.
+              ${product?.price}
             </p>
           </div>
         </Link>
