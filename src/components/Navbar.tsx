@@ -14,68 +14,53 @@ const Navbar: React.FC = () => {
   const theme = useSelector((state: RootState) => state.theme.theme);
   const basketAmount = useSelector((state: RootState) => state.products.basketAmount);
 
-  const changeThemeLight = () => {
-    dispatch(setTheme(false));
-    localStorage.setItem("theme", "dark");
-  };
+  // const changeThemeLight = () => {
+  //   dispatch(setTheme(false));
+  //   localStorage.setItem("theme", "dark");
+  // };
 
-  const changeThemeDark = () => {
-    dispatch(setTheme(true));
-    localStorage.setItem("theme", "light");
-  };
+  // const changeThemeDark = () => {
+  //   dispatch(setTheme(true));
+  //   localStorage.setItem("theme", "light");
+  // };
 
   return (
     <nav className="navbar justify-content-between">
-      <div>
-        {theme ? (
-          <LightModeIcon onClick={changeThemeLight} />
-        ) : (
-          <NightlightIcon
-            style={{ color: "white" }}
-            onClick={changeThemeDark}
-          />
-        )}
-      </div>
       <div className="navbar-brand">
         <Link
           to="/products"
           style={{ textDecoration: "none" }}
-          className={
-            theme ? `navbar-title-lightTheme` : `navbar-title-nightTheme`
-          }
-        >
-          Hepsiburada
-        </Link>
-      </div>
-      <div>
-        <Link to="/login">
-          <PersonIcon
-            className={
-              theme ? `navbar-title-lightTheme` : `navbar-title-nightTheme`
-            }
-          ></PersonIcon>
+          className={"navbar-title-nightTheme"}>
+          E - Commerce App
         </Link>
       </div>
 
       <p style={{ position: "absolute" }}></p>
 
+      <div style={{display: "flex", gap: "2rem"}}>
       <div>
+        <Link to="/login">
+          <PersonIcon
+            className="navbar-title-nightTheme"
+          ></PersonIcon>
+        </Link>
+      </div>
+
+        <div>
+
         <div
-          className={
-            theme ? `lightTheme navbar-count` : `nightTheme navbar-count`
-          }
-        >
+          className={`nightTheme navbar-count`}
+          >
           {basketAmount}
         </div>
         <div className="navbar-item">
           <Link to="/basket">
             <LocalGroceryStoreIcon
-              className={
-                theme ? `navbar-title-lightTheme` : `navbar-title-nightTheme`
-              }
+              className={`navbar-title-nightTheme`}
             />
           </Link>
         </div>
+          </div>
       </div>
     </nav>
   );

@@ -17,7 +17,7 @@ function App() {
 
   return (
     <>
-      <div style={{ backgroundColor: theme ? "white" : "black" }}>
+      <div className="main" style={{ backgroundColor: theme ? "white" : "black" }}>
         <Navbar />
         <Routes>
           <Route path="/products" element={<Products />} />

@@ -3,7 +3,7 @@ import { themeInitialStateType, setThemeActionType } from "../../types/Type";
 
 
 const initialState: themeInitialStateType = {
-  theme: true
+  theme: false
 }
 
 export const themeSlice = createSlice({

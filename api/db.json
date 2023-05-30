@@ -69,13 +69,6 @@
       "name": "iPhone XX",
       "price": "9999.99",
       "amount": 1
-    },
-    {
-      "id": 11,
-      "photo": "qwe",
-      "name": "qwe",
-      "price": "1",
-      "amount": 1
     }
   ],
   "users": [
