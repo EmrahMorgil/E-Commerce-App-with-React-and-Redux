@@ -9,7 +9,7 @@ import Users from "./pages/Users";
 import { useSelector } from "react-redux";
 import { RootState } from "./redux/store";
 import Products from "./pages/Products";
-import FocusProject from "./pages/FocusProject";
+import FocusProduct from "./pages/FocusProduct";
 
 function App() {
   const theme = useSelector((state: RootState) => state.theme.theme);
@@ -25,7 +25,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/users" element={userLoggedIn && <Users />} />
-          <Route path="/product/:id" element={<FocusProject />} />
+          <Route path="/product/:id" element={<FocusProduct />} />
         </Routes>
       </div>
     </>
