@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { mdlProduct } from "../types/Type";
-import AddBasketButton from "../components/Product/AddBasketButton";
+import AddBasketButton from "../components/Basket/AddBasketButton";
 
 const FocusProduct: React.FC = () => {
   const [clickedData, setClickedData] = useState<mdlProduct>({id: 0, photo: [], name: "", price: "", amount: 0});

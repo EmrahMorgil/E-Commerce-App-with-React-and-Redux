@@ -14,7 +14,6 @@ const Login: React.FC = () => {
   const dispatch = useDispatch();
 
   const userLoggedIn = useSelector((state: RootState) => state.users.userLoggedIn);
-  const theme = useSelector((state: RootState) => state.theme.theme);
   const users = useSelector((state: RootState) => state.users.users);
 
   const [input, setInput] = useState<UserType>({ username: "", password: "" });

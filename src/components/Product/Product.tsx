@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { basketItemType } from "../../types/Type";
-import AddBasketButton from "./AddBasketButton";
+import AddBasketButton from "../Basket/AddBasketButton";
 
 const Product: React.FC<basketItemType> = ({ product }) => {
 

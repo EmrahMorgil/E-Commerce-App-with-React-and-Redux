@@ -9,7 +9,6 @@ const Products: React.FC = () => {
         
       </div>
       <ProductList />
-      
       <Footer />
     </>
   );
