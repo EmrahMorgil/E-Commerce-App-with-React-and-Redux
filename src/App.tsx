@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "./redux/store";
 import Products from "./pages/Products";
 import FocusProduct from "./pages/FocusProduct";
+import Footer from "./components/Footer";
 
 function App() {
   const theme = useSelector((state: RootState) => state.theme.theme);
@@ -27,6 +28,7 @@ function App() {
           <Route path="/users" element={userLoggedIn && <Users />} />
           <Route path="/product/:id" element={<FocusProduct />} />
         </Routes>
+        <Footer />
       </div>
     </>
   );

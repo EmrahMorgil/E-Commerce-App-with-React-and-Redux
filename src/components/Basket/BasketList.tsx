@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import BasketItem from "./BasketItem";
 import BuyBasketItemButton from "./BuyBasketItemButton";
+import WorkOffIcon from '@mui/icons-material/WorkOff';
 
 const BasketList: React.FC = () => {
   const basket = useSelector((state: RootState) => state.products.basket);
@@ -12,7 +13,8 @@ const BasketList: React.FC = () => {
   );
 
   return (
-    <div className="row">
+    <>
+    {basket.length>0 ? <div className="row">
       <div className="col">
         {basket.map((item: mdlProduct) => {
           return <BasketItem product={item} key={item.id} />;
@@ -25,7 +27,9 @@ const BasketList: React.FC = () => {
         <BuyBasketItemButton />
         </div>
       </div>
-    </div>
+    </div> : <div style={{height: "52vh"}}><h3 style={{color: "white", textAlign: "center", marginTop: "5rem"}}>Basket is empty <WorkOffIcon /></h3></div>}
+    
+    </>
   );
 };
 

@@ -1,8 +1,11 @@
 import React from 'react'
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="site-footer" style={{padding: "12rem 0rem"}}>
+    <footer className="site-footer" style={{padding: "10rem 0rem"}}>
         <div className="container">
           <div className="row">
             <div className="col-sm-12 col-md-6">
@@ -39,10 +42,9 @@ const Footer: React.FC = () => {
             </div>
             <div className="col-md-4 col-sm-6 col-xs-12">
               <ul className="social-icons">
-                <li><a className="facebook" href="#"><i className="fa fa-facebook" /></a></li>
-                <li><a className="twitter" href="#"><i className="fa fa-twitter" /></a></li>
-                <li><a className="dribbble" href="#"><i className="fa fa-dribbble" /></a></li>
-                <li><a className="linkedin" href="#"><i className="fa fa-linkedin" /></a></li>   
+                <li><a className="facebook" href="#"><FacebookIcon /></a></li>
+                <li><a className="twitter" href="#"><TwitterIcon /></a></li>
+                <li><a className="linkedin" href="#"><LinkedInIcon /></a></li>   
               </ul>
             </div>
           </div>

@@ -10,19 +10,9 @@ import NightlightIcon from "@mui/icons-material/Nightlight";
 import { RootState } from "../redux/store";
 
 const Navbar: React.FC = () => {
-  const dispatch = useDispatch();
-  const theme = useSelector((state: RootState) => state.theme.theme);
   const basketAmount = useSelector((state: RootState) => state.products.basketAmount);
 
-  // const changeThemeLight = () => {
-  //   dispatch(setTheme(false));
-  //   localStorage.setItem("theme", "dark");
-  // };
 
-  // const changeThemeDark = () => {
-  //   dispatch(setTheme(true));
-  //   localStorage.setItem("theme", "light");
-  // };
 
   return (
     <nav className="navbar justify-content-between">

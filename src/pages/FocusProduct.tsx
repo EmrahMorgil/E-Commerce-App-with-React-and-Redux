@@ -18,8 +18,12 @@ const FocusProduct: React.FC = () => {
     fetchData();
   }, []);
 
+  window.scrollTo(0, 0);
 
   return (
+    <section>
+
+    
    <div className="row" style={{padding: "0px 280px", backgroundColor: "#B0B0B0"}}>
     <div className="col" style={{height: "40rem"}}>
     <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel" style={{width: "300px",marginLeft: "5rem"}}>
@@ -77,6 +81,7 @@ const FocusProduct: React.FC = () => {
 
     </div>
    </div>
+   </section>
   );
 };
 
