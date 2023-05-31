@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
-import { homeItem } from '../../types/Type';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 import { getProductsAsync } from '../../services/productService';
 import HourglassBottomIcon from '@mui/icons-material/HourglassBottom';
 import Product from './Product';
+import { mdlProduct } from '../../types/Type';
 
 const ProductList: React.FC = () => {
 
@@ -25,7 +25,7 @@ const ProductList: React.FC = () => {
 
   return (
     <div className='cards'>
-        {products.map((item: homeItem, index: number) => {
+        {products.map((item: mdlProduct, index: number) => {
         return <Product product={item} key={index} />;
       })}
     </div>

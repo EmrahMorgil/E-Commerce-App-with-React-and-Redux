@@ -1,10 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { homeItem } from "../types/Type";
+import { mdlProduct } from "../types/Type";
+import AddBasketButton from "../components/Product/AddBasketButton";
 
 const FocusProduct: React.FC = () => {
-  const [clickedData, setClickedData] = useState<homeItem>({id: 0, photo: "", name: "", price: "", amount: 0});
+  const [clickedData, setClickedData] = useState<mdlProduct>({id: 0, photo: [], name: "", price: "", amount: 0});
 
   let { id } = useParams();
 
@@ -15,30 +16,30 @@ const FocusProduct: React.FC = () => {
 
   useEffect(() => {
     fetchData();
-  });
+  }, []);
 
 
   return (
    <div className="row" style={{padding: "50px 280px", backgroundColor: "#B0B0B0"}}>
     <div className="col" style={{height: "40rem"}}>
-    <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+    <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel" style={{width: "300px",marginLeft: "5rem"}}>
         
         <div className="carousel-inner mt-4">
           <div className="carousel-item active">
-            <img className="d-block w-100" style={{height: "500px"}} src={clickedData.photo} alt="First slide" />
+            <img className="focusPhoto" src={clickedData.photo[0]} alt="First slide" />
           </div>
           <div className="carousel-item">
-            <img className="d-block w-100" style={{height: "500px"}} src={clickedData.photo} alt="Second slide" />
+            <img className="focusPhoto" src={clickedData.photo[1]} alt="Second slide" />
           </div>
           <div className="carousel-item">
-            <img className="d-block w-100" style={{height: "500px"}} src={clickedData.photo} alt="Third slide" />
+            <img className="focusPhoto" src={clickedData.photo[2]} alt="Third slide" />
           </div>
         </div>
         
-        <ol className="carousel-indicators">
-          <img src={clickedData.photo} style={{width: "60px", height: "60px", border: "1px solid grey"}} data-target="#carouselExampleIndicators" data-slide-to={0} className="active"/>
-          <img src={clickedData.photo} style={{width: "60px", height: "60px", border: "1px solid grey"}} data-target="#carouselExampleIndicators" data-slide-to={1} />
-          <img src={clickedData.photo} style={{width: "60px", height: "60px", border: "1px solid grey"}} data-target="#carouselExampleIndicators" data-slide-to={2} />
+        <ol className="carousel-indicators" style={{gap: "5px"}}>
+          <img src={clickedData.photo[0]} style={{width: "40px", height: "60px"}} data-target="#carouselExampleIndicators" data-slide-to={0} className="active"/>
+          <img src={clickedData.photo[1]} style={{width: "40px", height: "60px"}} data-target="#carouselExampleIndicators" data-slide-to={1} />
+          <img src={clickedData.photo[2]} style={{width: "40px", height: "60px"}} data-target="#carouselExampleIndicators" data-slide-to={2} />
           </ol>
       </div>
     </div>
@@ -60,7 +61,6 @@ const FocusProduct: React.FC = () => {
         <div className="product-detail">
           <h2>about this phone: </h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eveniet veniam tempora fuga tenetur placeat sapiente architecto illum soluta consequuntur, aspernatur quidem at sequi ipsa!</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
           <ul>
             <li>Color: <span>Black</span></li>
             <li>Available: <span>in stock</span></li>
@@ -69,9 +69,7 @@ const FocusProduct: React.FC = () => {
           </ul>
         </div>
         <div className="purchase-info">
-          <button type="button" className="btn">
-            Add to Cart <i className="fas fa-shopping-cart" />
-          </button>
+          <AddBasketButton product={clickedData}/>
         </div>
       </div>
       

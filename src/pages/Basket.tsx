@@ -5,7 +5,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import { toast } from "react-toastify";
 import { useDispatch,useSelector } from "react-redux";
 import { setTotalPrice, clearBasketItems } from "../redux/products/productsSlice";
-import { homeItem } from "../types/Type";
 import { RootState } from "../redux/store";
 import BasketList from "../components/Basket/BasketList";
 

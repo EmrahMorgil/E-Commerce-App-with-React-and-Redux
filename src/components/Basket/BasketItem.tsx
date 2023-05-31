@@ -1,7 +1,7 @@
 import React from "react";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import { basketItemType, homeItem } from "../../types/Type";
+import { basketItemType, mdlProduct } from "../../types/Type";
 import { basketAmount,deleteBasket,setBasket, setTotalPrice, addBasket } from "../../redux/products/productsSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../redux/store";
@@ -18,7 +18,7 @@ const BasketItem: React.FC<basketItemType> = ({ product }) => {
     dispatch(basketAmount(0));
     dispatch(setTotalPrice(totalPrice - Number(product?.price)));
 
-    let index = basket.find((item: homeItem) => product?.id === item.id);
+    let index = basket.find((item: mdlProduct) => product?.id === item.id);
 
     let newItem = { ...index };
     if(newItem.amount)
@@ -31,7 +31,7 @@ const BasketItem: React.FC<basketItemType> = ({ product }) => {
     dispatch(basketAmount(-1));
     dispatch(setTotalPrice(Number(totalPrice) + Number(product?.price)));
 
-    let index = basket.find((item: homeItem) => product?.id === item.id);
+    let index = basket.find((item: mdlProduct) => product?.id === item.id);
     
     if(index)
     
@@ -55,13 +55,13 @@ const BasketItem: React.FC<basketItemType> = ({ product }) => {
     }
     dispatch(setTotalPrice(updatePrice));
   
-    const newBasket = basket.filter((item: homeItem) => {
+    const newBasket = basket.filter((item: mdlProduct) => {
       return item.id !== id;
     });
     dispatch(deleteBasket(newBasket));
 
     let count = 0;
-    newBasket.map((item: homeItem) => {
+    newBasket.map((item: mdlProduct) => {
       return count += item.amount;
     });
 
@@ -80,7 +80,7 @@ const BasketItem: React.FC<basketItemType> = ({ product }) => {
         >
           <img
             className="card-img-top basket-item-img"
-            src={product?.photo}
+            src={product.photo[0]}
             alt={product?.name}
           />
           <div className="card-body">

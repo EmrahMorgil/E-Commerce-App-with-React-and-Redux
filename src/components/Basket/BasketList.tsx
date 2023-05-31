@@ -1,5 +1,5 @@
 import React from "react";
-import { homeItem } from "../../types/Type";
+import { mdlProduct } from "../../types/Type";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import BasketItem from "./BasketItem";
@@ -12,7 +12,7 @@ const BasketList: React.FC = () => {
 
   return (
     <div>
-      {basket.map((item: homeItem) => {
+      {basket.map((item: mdlProduct) => {
         return <BasketItem product={item} key={item.id} />;
       })}
       <h3 className={theme ? `lightTheme basket-total-price` : `nightTheme basket-total-price`}>Total Price: ${totalPrice.toFixed(2)}</h3>

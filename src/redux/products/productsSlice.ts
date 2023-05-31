@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {
-  homeItem,
   productInitialStateType,
   productsAddBasketActionType,
   productsDeleteBasketActionType,
   productsBasketAmountType,
   productsSetTotalPrice,
   extraReducersFullFilledType,
-  productsSetBasketActionType
+  productsSetBasketActionType,
+  mdlProduct
 } from "../../types/Type";
 import { getProductsAsync } from "../../services/productService";
 
@@ -33,7 +33,7 @@ export const productsSlice = createSlice({
     setBasket: (state: productInitialStateType, action: productsSetBasketActionType) => {
       console.log(action);
       
-      let newItem = state.basket.find((p: homeItem) => p.id === action.payload?.id);
+      let newItem = state.basket.find((p: mdlProduct) => p.id === action.payload?.id);
       if (newItem) newItem.amount = action.payload!.amount;
     },
     deleteBasket: (state: productInitialStateType,action: productsDeleteBasketActionType) => {

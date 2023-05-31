@@ -1,30 +1,30 @@
 export class basketItemType {
-  product?: homeItem;
+  product!: mdlProduct;
 }
 
 export class homeItemType {
-  item?: homeItem;
+  item?: mdlProduct;
 }
 
-export class homeItem {
-  id?: number;
-  photo?: string;
-  name?: string;
-  price?: string;
+export class mdlProduct {
+  id!: number;
+  photo!: string[];
+  name!: string;
+  price!: string;
   amount!: number;
 }
 
 //Product--------------------------
 export class productInitialStateType {
-  items: Array<homeItem>;
-  basket: Array<homeItem>;
+  items: Array<mdlProduct>;
+  basket: Array<mdlProduct>;
   basketAmount: number;
   totalPrice: number;
   status: string;
 
   constructor(
-    pItems: Array<homeItem>,
-    pBasket: Array<homeItem>,
+    pItems: Array<mdlProduct>,
+    pBasket: Array<mdlProduct>,
     pBasketAmount: number,
     pTotalPrice: number,
     pStatus: string
@@ -39,7 +39,7 @@ export class productInitialStateType {
 
 export class productsAddBasketActionType {
   type?: string;
-  payload!: homeItem;
+  payload!: mdlProduct;
 }
 
 export class productsSetBasketActionType {
@@ -53,7 +53,7 @@ export class productsSetBasketPayloadActionType {
 
 export class productsDeleteBasketActionType {
   type?: string;
-  payload!: Array<homeItem>;
+  payload!: Array<mdlProduct>;
 }
 export class productsBasketAmountType {
   type?: string;
@@ -65,7 +65,7 @@ export class productsSetTotalPrice {
 }
 export class extraReducersFullFilledType {
   type?: string;
-  payload!: Array<homeItem>;
+  payload!: Array<mdlProduct>;
   meta?: extraReducersFullFilledMetaType;
 }
 
