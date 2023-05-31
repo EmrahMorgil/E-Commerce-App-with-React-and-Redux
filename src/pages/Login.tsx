@@ -55,6 +55,7 @@ const Login: React.FC = () => {
                 <input
                   type="text"
                   name="username"
+                  placeholder="Username"
                   className="form-control"
                   onChange={handleChange}
                 />
@@ -64,6 +65,7 @@ const Login: React.FC = () => {
                 <input
                   type="password"
                   name="password"
+                  placeholder="Password"
                   className="form-control"
                   onChange={handleChange}
                 />
@@ -78,7 +80,7 @@ const Login: React.FC = () => {
               </button>
 
               <div className="text-center">
-                <p className={theme ? `lightTheme` : `nightTheme`}>
+                <p className={`nightTheme`}>
                   Not a member?{" "}
                   <Link
                     to="/register"

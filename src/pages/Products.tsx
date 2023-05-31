@@ -1,5 +1,6 @@
 import React from "react";
 import ProductList from "../components/Product/ProductList";
+import Footer from "../components/Footer";
 
 const Products: React.FC = () => {
   return (
@@ -8,6 +9,8 @@ const Products: React.FC = () => {
         
       </div>
       <ProductList />
+      
+      <Footer />
     </>
   );
 };
