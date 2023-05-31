@@ -3,7 +3,7 @@ import { basketItemType } from "../../types/Type";
 import AddBasketButton from "./AddBasketButton";
 
 const Product: React.FC<basketItemType> = ({ product }) => {
-  
+
   function reveal() {
     var reveals = document.querySelectorAll(".reveal");
   
@@ -24,7 +24,7 @@ const Product: React.FC<basketItemType> = ({ product }) => {
 
   return (
     <div className="item">
-      <div className="productsContainer reveal">
+      <div className="productsContainer reveal" style={{backgroundColor: "#1C1C1C"}}>
         <Link to={`/product/${product?.id}`} style={{ textDecoration: "none" }}>
           <div className="productsWrapper">
             <div className="banner-image">
