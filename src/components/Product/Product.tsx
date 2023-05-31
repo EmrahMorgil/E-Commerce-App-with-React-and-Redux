@@ -7,7 +7,7 @@ const Product: React.FC<basketItemType> = ({ product }) => {
 
   return (
     <div className="item">
-      <div className="productsContainer">
+      <div className="productsContainer reveal">
         <Link to={`/product/${product?.id}`} style={{ textDecoration: "none" }}>
           <div className="productsWrapper">
             <div className="banner-image">

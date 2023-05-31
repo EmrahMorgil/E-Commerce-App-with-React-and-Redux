@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer: React.FC = () => {
   return (
-    <footer className="site-footer" style={{paddingTop: "10rem"}}>
+    <footer className="site-footer" style={{padding: "12rem 0rem"}}>
         <div className="container">
           <div className="row">
             <div className="col-sm-12 col-md-6">
