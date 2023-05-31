@@ -20,7 +20,7 @@ const FocusProduct: React.FC = () => {
 
 
   return (
-   <div className="row" style={{padding: "50px 280px", backgroundColor: "#B0B0B0"}}>
+   <div className="row" style={{padding: "0px 280px", backgroundColor: "#B0B0B0"}}>
     <div className="col" style={{height: "40rem"}}>
     <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel" style={{width: "300px",marginLeft: "5rem"}}>
         
