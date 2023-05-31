@@ -43,14 +43,15 @@ const Basket: React.FC = () => {
   return (
     <div className="basket"> 
       <h3 className={theme ? `lightTheme basket-total-price` : `nightTheme basket-total-price`}>Basket</h3>
-      <button className="btn btn-outline-danger" onClick={clearBasket}>Clear Basket</button>
+      <hr style={{border: "1px solid white"}}/>
+      {/* <button className="btn btn-outline-danger" onClick={clearBasket}>Clear Basket</button> */}
       <br/><br/>
       <div>
         <BasketList />
       </div>
-      <div style={{marginTop: "13vh"}}>
+      {/* <div style={{marginTop: "13vh"}}>
         <button onClick={buyClick} className="btn btn-success" style={{width: "100%"}}>Buy</button>
-      </div>
+      </div> */}
     </div>
   );
 };

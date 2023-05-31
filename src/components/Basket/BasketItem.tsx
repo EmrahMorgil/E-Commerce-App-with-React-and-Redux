@@ -5,6 +5,7 @@ import { basketItemType, mdlProduct } from "../../types/Type";
 import { basketAmount,deleteBasket,setBasket, setTotalPrice, addBasket } from "../../redux/products/productsSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../redux/store";
+import DeleteBasketItemButton from "./DeleteBasketItemButton";
 
 
 const BasketItem: React.FC<basketItemType> = ({ product }) => {
@@ -71,39 +72,24 @@ const BasketItem: React.FC<basketItemType> = ({ product }) => {
   return (
     <>
       {Number(product?.amount) > 0 && totalPrice > 0 && (
-        <div
-          className={
-            theme
-              ? `backgroundLightTheme card basket-item`
-              : `backgroundNightTheme card basket-item`
-          }
-        >
-          <img
-            className="card-img-top basket-item-img"
-            src={product.photo[0]}
-            alt={product?.name}
-          />
-          <div className="card-body">
-            <h5
-              className={
-                theme ? `lightTheme card-title` : `nightTheme card-title`
-              }
-            >
+        <div style={{display: "flex"}}>
+          <img className="card-img-top basket-item-img" src={product.photo[0]} alt={product?.name}/>
+          <div className="card-detail">
+            <h5 className={`nightTheme card-title`}>
               {product?.name}
             </h5>
-            <p
-              className={
-                theme ? `lightTheme card-text` : `nightTheme card-text`
-              }
-            >
+            <p className={`nightTheme card-text`}>
               ${product?.price}
             </p>
+            <div style={{display: "flex"}}>
+
             <div className="basket-item-amount">
+              {product.amount === 1 ? <DeleteBasketItemButton product={product}/> : 
               <RemoveIcon
                 style={{ cursor: "pointer" }}
                 className={theme ? `lightTheme` : `nightTheme`}
                 onClick={decrement}
-              />
+              />}
               <p className={theme ? `lightTheme` : `nightTheme`}>
                 {product?.amount}
               </p>
@@ -113,12 +99,17 @@ const BasketItem: React.FC<basketItemType> = ({ product }) => {
                 onClick={increment}
               />
             </div>
-            <button
+            <div>
+            {product.amount>1 && <DeleteBasketItemButton product={product}/>}
+            </div>
+            </div>
+            {/* <button
               onClick={() => deleteItem(product?.id)}
               className="btn btn-danger"
             >
               Remove
-            </button>
+            </button> */}
+            
           </div>
         </div>
       )}

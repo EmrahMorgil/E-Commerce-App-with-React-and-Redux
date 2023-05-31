@@ -495,21 +495,26 @@ img{
   /* Basket */
   
   .basket{
-	  margin: 0px 40px;
-	  
-	  
+	  margin: 20px 300px;
   }
   .basket-total-price{
-	  margin-top: 45px;
+	  /* margin-top: 45px; */
+  }
+
+  .card-detail{
+    margin: 1rem 0rem 0rem 1rem;
   }
   
   /* BasketItems */
   .basket-item-img {
-	width: 230px;
-	height: 200px;
+	width: 110px;
+	height: 130px;
   }
   .basket-item-amount {
-	display: flex;
+	display: inline-flex;
+  height: 1.7rem;
+  border: 1px solid grey;
+  border-radius: 15%;
   }
   
   
