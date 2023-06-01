@@ -3,10 +3,7 @@ import { Link } from "react-router-dom";
 import "../styles/App.css";
 import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
 import { useSelector, useDispatch } from "react-redux";
-import { setTheme } from "../redux/theme/themeSlice";
 import PersonIcon from "@mui/icons-material/Person";
-import LightModeIcon from "@mui/icons-material/LightMode";
-import NightlightIcon from "@mui/icons-material/Nightlight";
 import { RootState } from "../redux/store";
 
 const Navbar: React.FC = () => {
@@ -25,7 +22,6 @@ const Navbar: React.FC = () => {
         </Link>
       </div>
 
-      <p style={{ position: "absolute" }}></p>
 
       <div style={{display: "flex", gap: "2rem"}}>
       <div>

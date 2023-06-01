@@ -1,45 +1,33 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {
-  productInitialStateType,
-  productsAddBasketActionType,
-  productsDeleteBasketActionType,
-  productsBasketAmountType,
-  productsSetTotalPrice,
-  extraReducersFullFilledType,
-  productsSetBasketActionType,
-  mdlProduct
-} from "../../types/Type";
+import {mdlProduct, productInitialStateType} from "../../types/Type";
 import { getProductsAsync } from "../../services/productService";
 
 
-
 const initialState: productInitialStateType = {
-  items: [],
+  products: [],
   basket: [],
   basketAmount: 0,
   totalPrice: 0,
   status: "idle",
 };
 
-
-
 export const productsSlice = createSlice({
   name: "products",
   initialState,
   reducers: {
-    addBasket: (state: productInitialStateType, action: productsAddBasketActionType) => {
+    addBasket: (state, action) => {
       state.basket.push(action.payload);
     },
-    setBasket: (state: productInitialStateType, action: productsSetBasketActionType) => {
+    setBasket: (state, action) => {
       console.log(action);
       
-      let newItem = state.basket.find((p: mdlProduct) => p.id === action.payload?.id);
+      let newItem = state.basket.find((p: mdlProduct) => String(p.id) === String(action.payload.id));
       if (newItem) newItem.amount = action.payload!.amount;
     },
-    deleteBasket: (state: productInitialStateType,action: productsDeleteBasketActionType) => {
+    deleteBasket: (state,action) => {
       state.basket = action.payload;
     },
-    basketAmount: (state: productInitialStateType,action: productsBasketAmountType) => {
+    basketAmount: (state,action) => {
       if (action.payload === -1) {
         state.basketAmount++;
       } else if (action.payload === 0) {
@@ -49,12 +37,18 @@ export const productsSlice = createSlice({
         state.basketAmount = action.payload;
       }
     },
-    clearBasketItems: (state: productInitialStateType) => {
+    clearBasketItems: (state) => {
       state.basket = [];
       state.basketAmount = 0;
     },
-    setTotalPrice: (state: productInitialStateType,action: productsSetTotalPrice) => {
+    setTotalPrice: (state,action) => {
       state.totalPrice = action.payload;
+    },
+    setProducts: (state, action)=>{
+      state.products = action.payload;
+    },  
+    addProducts: (state, action)=>{
+      state.products.push(action.payload);
     },
   },
   extraReducers: (builder) => {
@@ -66,8 +60,8 @@ export const productsSlice = createSlice({
     );
     builder.addCase(
       getProductsAsync.fulfilled,
-      (state: productInitialStateType, action: extraReducersFullFilledType) => {
-        state.items = action.payload;
+      (state, action) => {
+        state.products = action.payload;
         state.status = "success";
       }
     );
@@ -82,4 +76,6 @@ export const {
   basketAmount,
   clearBasketItems,
   setTotalPrice,
+  setProducts,
+  addProducts,
 } = productsSlice.actions;

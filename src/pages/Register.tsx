@@ -10,15 +10,15 @@ import { useSelector, useDispatch } from "react-redux";
 import { setRegisterControl } from "../redux/users/usersSlice";
 import { addUsers } from "../redux/users/usersSlice";
 import { RootState } from "../redux/store";
+import { nanoid } from "@reduxjs/toolkit";
 
 const Register: React.FC = () => {
   const dispatch = useDispatch();
 
-  const theme = useSelector((state: RootState) => state.theme.theme);
   const users = useSelector((state: RootState) => state.users.users);
   const registerControl = useSelector((state: RootState) => state.users.registerControl);
 
-  const [input, setInput] = useState<UserType>({ username: "", password: "" });
+  const [input, setInput] = useState<UserType>({id: "", username: "", password: "" });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput({ ...input, [e.target.name]: e.target.value });
@@ -30,16 +30,18 @@ const Register: React.FC = () => {
     if (newArr.includes(true)) {
       toast.error("Seçtiğiniz Kullanıcı Adı Kullanılıyor!");
     } else {
+      let randomId = nanoid();
       dispatch(
-        addUsers({ username: input.username, password: input.password })
+        addUsers({ id: randomId, username: input.username, password: input.password })
       );
 
       await axios.post("http://localhost:3004/users", {
+        id: randomId,
         username: input.username,
         password: input.password,
       });
       toast.success("Kayıt Başarılı!");
-      setInput({ username: "", password: "" });
+      setInput({ id: "", username: "", password: "" });
       dispatch(setRegisterControl(true));
     }
   };
@@ -82,7 +84,7 @@ const Register: React.FC = () => {
             </button>
 
             <div className="text-center">
-              <p className={theme ? `lightTheme` : `nightTheme`}>
+              <p className={`nightTheme`}>
                 Have already an account? <Link to="/login">Login</Link>
               </p>
             </div>

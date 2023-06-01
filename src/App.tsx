@@ -11,14 +11,14 @@ import { RootState } from "./redux/store";
 import Products from "./pages/Products";
 import FocusProduct from "./pages/FocusProduct";
 import Footer from "./components/Footer";
+import AdminPanel from "./pages/AdminPanel";
 
 function App() {
-  const theme = useSelector((state: RootState) => state.theme.theme);
-  const userLoggedIn = useSelector((state: RootState) => state.users.userLoggedIn);
+  const {userLoggedIn, adminLoggedIn} = useSelector((state: RootState) => state.users);
 
   return (
     <>
-      <div className="main" style={{ backgroundColor: theme ? "white" : "black" }}>
+      <div className="main" style={{ backgroundColor: "black" }}>
         <Navbar />
         <Routes>
           <Route path="/products" element={<Products />} />
@@ -27,6 +27,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/users" element={userLoggedIn && <Users />} />
           <Route path="/product/:id" element={<FocusProduct />} />
+          <Route path="/adminpanel" element={<AdminPanel />}/>
         </Routes>
         <Footer />
       </div>

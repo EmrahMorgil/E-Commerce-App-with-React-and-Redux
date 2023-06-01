@@ -5,7 +5,7 @@ import { mdlProduct } from "../types/Type";
 import AddBasketButton from "../components/Basket/AddBasketButton";
 
 const FocusProduct: React.FC = () => {
-  const [clickedData, setClickedData] = useState<mdlProduct>({id: 0, photo: [], name: "", price: "", amount: 0});
+  const [clickedData, setClickedData] = useState<mdlProduct>({id: "", photo: [], name: "", price: "", amount: 0});
 
   let { id } = useParams();
 

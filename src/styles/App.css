@@ -572,8 +572,14 @@ img{
 
 
 
+/* userpage */
 
 
+.userSettingPage{
+  padding: 15px;
+  border-radius: 30%;
+  width: 15rem;
+}
 
 
 

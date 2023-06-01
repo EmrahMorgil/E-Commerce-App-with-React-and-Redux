@@ -24,7 +24,7 @@ const AddBasketButton: React.FC<IAddBasketButton> = ({ product }) => {
     dispatch(basketAmount(-1));
     dispatch(setTotalPrice(Number(totalPrice) + Number(product.price)));
 
-    let index = basket.find((item: mdlProduct) => product?.id === item.id);
+    let index = basket.find((item: mdlProduct) => product.id === item.id);
 
     if (index) {
       if (basket.includes(index)) {

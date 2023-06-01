@@ -8,7 +8,7 @@ import { mdlProduct } from '../../types/Type';
 
 const ProductList: React.FC = () => {
 
-    const products = useSelector((state: RootState) => state.products.items);
+    const products = useSelector((state: RootState) => state.products.products);
     const status = useSelector((state: RootState) => state.products.status);
     const dispatch = useDispatch();
 

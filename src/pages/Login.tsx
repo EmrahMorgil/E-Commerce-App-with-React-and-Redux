@@ -16,7 +16,7 @@ const Login: React.FC = () => {
   const userLoggedIn = useSelector((state: RootState) => state.users.userLoggedIn);
   const users = useSelector((state: RootState) => state.users.users);
 
-  const [input, setInput] = useState<UserType>({ username: "", password: "" });
+  const [input, setInput] = useState<UserType>({ id: "", username: "", password: "" });
 
   useEffect(() => {
     dispatch(getUsersAsync());

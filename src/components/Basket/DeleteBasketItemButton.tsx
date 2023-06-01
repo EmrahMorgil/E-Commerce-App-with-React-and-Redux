@@ -15,7 +15,7 @@ const DeleteBasketItemButton: React.FC<IDeleteBasketItemButton> = ({product}) =>
     const basket = useSelector((state: RootState) => state.products.basket);
     const dispatch = useDispatch();
 
-    const deleteItem = (id?: number) => {
+    const deleteItem = (id?: string) => {
         let updatePrice = totalPrice - Number(product?.price) * Number(product?.amount);
         if (updatePrice < 0.1) {
           updatePrice = 0;

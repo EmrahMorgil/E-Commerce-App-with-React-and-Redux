@@ -15,18 +15,14 @@ import DeleteBasketItemButton from "./DeleteBasketItemButton";
 
 const BasketItem: React.FC<basketItemType> = ({ product }) => {
   const dispatch = useDispatch();
-
-  const totalPrice = useSelector(
-    (state: RootState) => state.products?.totalPrice
-  );
-  const theme = useSelector((state: RootState) => state.theme.theme);
+  const totalPrice = useSelector((state: RootState) => state.products.totalPrice);
   const basket = useSelector((state: RootState) => state.products.basket);
 
   const decrement = () => {
     dispatch(basketAmount(0));
     dispatch(setTotalPrice(totalPrice - Number(product?.price)));
 
-    let index = basket.find((item: mdlProduct) => product?.id === item.id);
+    let index = basket.find((item: mdlProduct) => product.id === item.id);
 
     let newItem = { ...index };
     if (newItem.amount) {
@@ -74,15 +70,15 @@ const BasketItem: React.FC<basketItemType> = ({ product }) => {
                 ) : (
                   <RemoveIcon
                     style={{ cursor: "pointer" }}
-                    className={theme ? `lightTheme` : `nightTheme`}
+                    className={`nightTheme`}
                     onClick={decrement}
                   />
                 )}
-                <p className={theme ? `lightTheme` : `nightTheme`}>
+                <p className={`nightTheme`}>
                   {product?.amount}
                 </p>
                 <AddIcon
-                  className={theme ? `lightTheme` : `nightTheme`}
+                  className={`nightTheme`}
                   style={{ cursor: "pointer" }}
                   onClick={increment}
                 />

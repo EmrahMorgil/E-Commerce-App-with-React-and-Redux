@@ -3,11 +3,11 @@ import { toast } from "react-toastify";
 import { useSelector, useDispatch } from 'react-redux';
 import { setUserLoggedIn } from '../redux/users/usersSlice';
 import { RootState } from '../redux/store';
+import BorderColorIcon from '@mui/icons-material/BorderColor';
 
 const Users: React.FC = () => {
 
    const dispatch = useDispatch();
-   const theme = useSelector((state:RootState)=>state.theme.theme);
    const welcomeUser = useSelector((state:RootState)=>state.users.welcomeUser);
    
 
@@ -17,10 +17,16 @@ const Users: React.FC = () => {
   }
 
   return (
-    <div style={{height: "87.5vh"}}>
-        <h1 className={theme ? `lightTheme` : `nightTheme`}>Welcome {welcomeUser}</h1>
-        <hr />
+    <div style={{height: "87.5vh", display: "flex", flexDirection: "column", alignItems: "center", marginTop: "5rem"}}>
+        <h1 className={`nightTheme`}>Welcome {welcomeUser}</h1>
+        <hr style={{border: "1px solid white", width: "10rem"}}/>
+        <div style={{textAlign: "center"}}>
+      
+        <h3 style={{color: "white"}}><button className='userSettingPage'>Orders</button></h3>
+        <h3 style={{color: "white"}}><button className='userSettingPage'>My Adress</button></h3>
+        <h3 style={{color: "white"}}><button className='userSettingPage'>Settings</button></h3>
         <button className='btn btn-danger' onClick={userLogout}>Logout</button>
+        </div>
     </div>
   )
 }
