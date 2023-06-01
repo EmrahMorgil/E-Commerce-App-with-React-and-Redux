@@ -15,7 +15,7 @@ const AddProductModal: React.FC = () => {
   return (
     <div
       className="modal fade"
-      id="exampleModal"
+      id="addproduct"
       tabIndex={-1}
       role="dialog"
       aria-labelledby="exampleModalLabel"
@@ -44,9 +44,15 @@ const AddProductModal: React.FC = () => {
               setProductPhoto={setProductPhoto}
             />
           </div>
-          {newProduct.photo.map((i: string) => (
-            <li>{i.substring(0, 50)}</li>
-          ))}
+          <div style={{display: "flex",flexDirection: "column" , margin: "2rem 8rem", gap: "1rem", justifyContent: "center"}}>
+
+          {newProduct.photo.map((i)=>{
+            if(i)
+            {
+              return <div><img src={i} width="100px" height="150px" /></div>
+            }
+          })}
+          </div>
           <div className="modal-footer">
             <button
               type="button"

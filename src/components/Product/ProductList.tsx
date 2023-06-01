@@ -6,7 +6,11 @@ import HourglassBottomIcon from '@mui/icons-material/HourglassBottom';
 import Product from './Product';
 import { mdlProduct } from '../../types/Type';
 
-const ProductList: React.FC = () => {
+export interface IProductList{
+  page?: string;
+}
+
+const ProductList: React.FC<IProductList> = ({page}) => {
 
     const products = useSelector((state: RootState) => state.products.products);
     const status = useSelector((state: RootState) => state.products.status);
@@ -26,7 +30,7 @@ const ProductList: React.FC = () => {
   return (
     <div className='cards'>
         {products.map((item: mdlProduct, index: number) => {
-        return <Product product={item} key={index} />;
+        return <Product product={item} key={index} page={page}/>;
       })}
     </div>
   )

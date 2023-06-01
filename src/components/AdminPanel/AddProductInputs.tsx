@@ -21,19 +21,21 @@ const AddProductInputs: React.FC<IAddProductInputs> = ({newProduct, setNewProduc
     }
 
   return (
-    <div style={{display: "flex", flexDirection: "column"}}>
-        <div>
-        <label>Product Name: </label>
+    <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+        <div style={{display: "flex", flexDirection: "column"}}>
+        <label style={{textAlign: "center"}}>Product Name: </label>
         <input name='name' onChange={handleChange} style={{width: "200px"}} value={newProduct.name}/>
         </div>
-        <div>
-            <label>Product Price: </label>
+        <div style={{display: "flex", flexDirection: "column"}}>
+            <label style={{textAlign: "center"}}>Product Price: </label>
         <input name='price' onChange={handleChange} style={{width: "200px"}} value={newProduct.price}/>
         </div>
-        <div>
-            <label>Product Photos: </label>
+        <div style={{display: "flex", flexDirection: "column"}}>
+            
+            <label style={{textAlign: "center"}}>Product Photos: </label>
+            
             <input name='photo' onChange={(e)=>setProductPhoto(e.target.value)} style={{width: "200px"}} value={productPhoto}/>
-            <button className='btn btn-success' onClick={(e)=>addPhoto(e)}>Add</button>
+            <button className='btn btn-success mt-1' onClick={(e)=>addPhoto(e)}>Add Photo</button>
         </div>
     </div>
   )

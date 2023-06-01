@@ -11,3 +11,7 @@ export const getProductsAsync: any = createAsyncThunk("products/getProductsAsync
 export const addProductsAsync = async(product: mdlProduct)=>{
   await axios.post(`http://localhost:3004/products`, product);
 }
+
+export const deleteProductsAsync = async(id: string)=>{
+  await axios.delete(`http://localhost:3004/products/${id}`);
+}

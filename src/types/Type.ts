@@ -33,6 +33,7 @@ export class usersInitialStateType {
 
 export class basketItemType {
   product!: mdlProduct;
+  page?: string;
 }
 
 export class homeItemType {

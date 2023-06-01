@@ -12,7 +12,7 @@ const AdminPanel: React.FC = () => {
         <h3 style={{color: "white"}}>Admin Panel</h3>
         <hr style={{borderTop: "10px dotted white", width: "10rem"}}/>
         <div>
-        <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style={{margin: "2rem 0rem 3rem 0rem"}}>
+        <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#addproduct" style={{margin: "2rem 0rem 3rem 0rem"}}>
           Add New Product
         </button>
         <AddProductModal />
@@ -21,7 +21,7 @@ const AdminPanel: React.FC = () => {
 
         </div>
       </div>
-    <ProductList />
+    <ProductList page="adminpanel"/>
     </div>
   )
 }

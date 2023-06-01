@@ -50,6 +50,15 @@ export const productsSlice = createSlice({
     addProducts: (state, action)=>{
       state.products.push(action.payload);
     },
+    deleteProducts: (state, action)=>{
+      let newProducts = state.products.filter((p: mdlProduct)=>{
+        if(p.id!==action.payload.id)
+        {
+          return p;
+        }
+      });
+      state.products = newProducts;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(
@@ -78,4 +87,5 @@ export const {
   setTotalPrice,
   setProducts,
   addProducts,
+  deleteProducts,
 } = productsSlice.actions;
