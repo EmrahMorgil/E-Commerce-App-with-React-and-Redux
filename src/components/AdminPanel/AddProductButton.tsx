@@ -7,13 +7,7 @@ import { addProductsAsync } from '../../services/productService';
 
 export interface IAddProductButton{
     newProduct: mdlProduct;
-    setNewProduct: React.Dispatch<React.SetStateAction<{
-      id: string;
-      photo: never[];
-      name: string;
-      price: string;
-      amount: number;
-  }>>;
+    setNewProduct: React.Dispatch<React.SetStateAction<mdlProduct>>;
   setProductPhoto: React.Dispatch<React.SetStateAction<string>>;
 }
 

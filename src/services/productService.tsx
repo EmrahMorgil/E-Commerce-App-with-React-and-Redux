@@ -15,3 +15,7 @@ export const addProductsAsync = async(product: mdlProduct)=>{
 export const deleteProductsAsync = async(id: string)=>{
   await axios.delete(`http://localhost:3004/products/${id}`);
 }
+
+export const updateProductsAsync = async(product: mdlProduct)=>{
+  await axios.put(`http://localhost:3004/products/${product.id}`, product);
+}

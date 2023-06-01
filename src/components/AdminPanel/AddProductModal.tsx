@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import AddProductInputs from "./AddProductInputs";
 import AddProductButton from "./AddProductButton";
 import { mdlProduct } from "../../types/Type";
+import DeleteOnProductButton from "./DeleteOnProductButton";
 
 const AddProductModal: React.FC = () => {
-  const [newProduct, setNewProduct] = useState({
+  const [newProduct, setNewProduct] = useState<mdlProduct>({
     id: "",
     photo: [],
     name: "",
@@ -13,17 +14,18 @@ const AddProductModal: React.FC = () => {
   });
   const [productPhoto, setProductPhoto] = useState("");
 
-  const removePhoto = (item: string)=>{
-    let removedPhoto = newProduct.photo.filter((product: string)=>{
-      if(product!==item)
+  
+  const photoChange = (e: any, i: string)=>{
+    let updatedPhotos = newProduct.photo.map((photo: string)=>{
+      if(photo==i)
       {
-        return product;
+        return e.target.value;
+      }else{
+        return photo;
       }
     })
 
-    setNewProduct({...newProduct, ["photo"]: removedPhoto});
-
-
+    setNewProduct({...newProduct, ["photo"]: updatedPhotos});
   }
 
   return (
@@ -65,8 +67,8 @@ const AddProductModal: React.FC = () => {
             {
               return <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
                 <img src={i} width="100px" height="150px" />
-                <input className="mt-2" value={i}/>
-                <button className="btn btn-danger mt-2" onClick={()=>removePhoto(i)}>X</button>
+                <input className="mt-2" value={i} onChange={(e)=>photoChange(e, i)}/>
+                <DeleteOnProductButton item={i} newProduct={newProduct} setNewProduct={setNewProduct}/>
                 </div>
             }
           })}

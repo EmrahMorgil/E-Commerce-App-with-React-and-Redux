@@ -1,5 +1,6 @@
 import React from 'react'
 import { mdlProduct } from '../../types/Type'
+import AddOnProductButton from './AddOnProductButton';
 
 export interface IAddProductInputs{
     newProduct: mdlProduct;
@@ -36,7 +37,8 @@ const AddProductInputs: React.FC<IAddProductInputs> = ({newProduct, setNewProduc
             <label style={{textAlign: "center"}}>Product Photos: </label>
             
             <input name='photo' onChange={(e)=>setProductPhoto(e.target.value)} style={{width: "200px"}} value={productPhoto}/>
-            <button className='btn btn-success mt-1' onClick={(e)=>addPhoto(e)}>Add Photo</button>
+            {/* <button className='btn btn-success mt-1' onClick={(e)=>addPhoto(e)}>Add Photo</button> */}
+            <AddOnProductButton productPhoto={productPhoto} setProductPhoto={setProductPhoto} newProduct={newProduct} setNewProduct={setNewProduct}/>
         </div>
     </div>
   )
