@@ -7,7 +7,7 @@ const initialState: usersInitialStateType = {
   userLoggedIn: false,
   adminLoggedIn: false,
   registerControl: false,
-  activeUser: {id: "", username: "", password: ""},
+  activeUser: {id: "", username: "", password: "", role: 0},
 }
 
 export const usersSlice = createSlice({

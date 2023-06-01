@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import "../styles/App.css";
 import axios from "axios";
 import "react-toastify/dist/ReactToastify.css";
@@ -18,7 +18,7 @@ const Register: React.FC = () => {
   const users = useSelector((state: RootState) => state.users.users);
   const registerControl = useSelector((state: RootState) => state.users.registerControl);
 
-  const [input, setInput] = useState<mdlUser>({id: "", username: "", password: "" });
+  const [input, setInput] = useState<mdlUser>({id: "", username: "", password: "", role: 0 });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput({ ...input, [e.target.name]: e.target.value });
@@ -32,16 +32,17 @@ const Register: React.FC = () => {
     } else {
       let randomId = nanoid();
       dispatch(
-        addUsers({ id: randomId, username: input.username, password: input.password })
+        addUsers({ id: randomId, username: input.username, password: input.password, role: input.role })
       );
 
       await axios.post("http://localhost:3004/users", {
         id: randomId,
         username: input.username,
         password: input.password,
+        role: input.role
       });
       toast.success("Kayıt Başarılı!");
-      setInput({ id: "", username: "", password: "" });
+      setInput({ id: "", username: "", password: "", role: 0});
       dispatch(setRegisterControl(true));
     }
   };
@@ -49,7 +50,7 @@ const Register: React.FC = () => {
   return (
     <div>
       {registerControl ? (
-        <Login />
+        <Navigate to="/login" />
       ) : (
         <div className="login">
           <form className="loginForm">

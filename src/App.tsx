@@ -12,6 +12,7 @@ import FocusProduct from "./pages/FocusProduct";
 import Footer from "./components/Footer";
 import AdminPanel from "./pages/AdminPanel";
 import UserPage from "./pages/UserPage";
+import Protected from "./components/Protected";
 
 function App() {
   const {userLoggedIn, adminLoggedIn} = useSelector((state: RootState) => state.users);
@@ -25,9 +26,9 @@ function App() {
           <Route path="/basket" element={<Basket />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/userpage" element={userLoggedIn && <UserPage />} />
+          <Route path="/userpage" element={<Protected loggedIn={userLoggedIn}><UserPage /></Protected>} />
           <Route path="/product/:id" element={<FocusProduct />} />
-          <Route path="/adminpanel" element={<AdminPanel />}/>
+          <Route path="/adminpanel" element={<Protected loggedIn={adminLoggedIn}><AdminPanel /></Protected>}/>
         </Routes>
         <Footer />
       </div>

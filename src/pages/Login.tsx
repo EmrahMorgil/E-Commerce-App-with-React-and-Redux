@@ -1,40 +1,60 @@
-import React, { useState, useEffect }  from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/App.css";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import Users from "./UserPage";
 import { mdlUser } from "../types/Type";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
 import { useSelector, useDispatch } from "react-redux";
-import { setActiveUser, setRegisterControl, setUserLoggedIn} from "../redux/users/usersSlice";
+import {
+  setActiveUser,
+  setAdminLoggedIn,
+  setRegisterControl,
+  setUserLoggedIn,
+} from "../redux/users/usersSlice";
 import { RootState } from "../redux/store";
 import { getUsersAsync } from "../services/userService";
 
 const Login: React.FC = () => {
   const dispatch = useDispatch();
 
-  const userLoggedIn = useSelector((state: RootState) => state.users.userLoggedIn);
+  const { userLoggedIn, adminLoggedIn } = useSelector(
+    (state: RootState) => state.users
+  );
   const users = useSelector((state: RootState) => state.users.users);
 
-  const [input, setInput] = useState<mdlUser>({ id: "", username: "", password: "" });
+  const [input, setInput] = useState<mdlUser>({
+    id: "",
+    username: "",
+    password: "",
+    role: 0,
+  });
 
   useEffect(() => {
     dispatch(getUsersAsync());
   }, [dispatch]);
 
   const userLogin = () => {
-    const User = users.filter((item: mdlUser) =>{
-      if(item.username === input.username && item.password === input.password)
-      {
+    const User = users.filter((item: mdlUser) => {
+      if (
+        item.username === input.username &&
+        item.password === input.password
+      ) {
         return item;
-      }});
+      }
+    });
 
-    if (User.length>0) {
-      if(input.username)
-      dispatch(setActiveUser(User[0]));
-      <Link to="/users" />;
-      toast.success("Kullanıcı Girişi Başarılı...");
-      dispatch(setUserLoggedIn(true));
+    if (User.length > 0) {
+      if(User[0].role === 0)
+      {
+        if (input.username) dispatch(setActiveUser(User[0]));
+        toast.success("Kullanıcı Girişi Başarılı...");
+        dispatch(setUserLoggedIn(true));
+      }else{
+        dispatch(setActiveUser(User[0]));
+        toast.success("Admin Girişi Başarılı...");
+        dispatch(setAdminLoggedIn(true));
+      }
     } else {
       toast.error("Kullanıcı adı ya da şifre hatalı!");
     }
@@ -47,7 +67,9 @@ const Login: React.FC = () => {
   return (
     <>
       {userLoggedIn ? (
-        <Users />
+        <Navigate to="/userpage" />
+      ) : adminLoggedIn ? (
+        <Navigate to="/adminpanel" />
       ) : (
         <div>
           <div className="login">

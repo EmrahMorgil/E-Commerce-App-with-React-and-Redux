@@ -7,6 +7,12 @@ export class mdlProduct {
   amount!: number;
 }
 
+export class mdlUser {
+  id!: string;
+  username!: string;
+  password!: string;
+  role!: enmUser;
+}
 
 export class productInitialStateType {
   products!: Array<mdlProduct>;
@@ -16,6 +22,13 @@ export class productInitialStateType {
   status!: string;
 }
 
+export class usersInitialStateType {
+  users!: Array<mdlUser>;
+  userLoggedIn!: boolean;
+  adminLoggedIn!: boolean;
+  registerControl!: boolean;
+  activeUser!: mdlUser;
+}
 
 
 export class basketItemType {
@@ -26,28 +39,14 @@ export class homeItemType {
   item!: mdlProduct;
 }
 
-
-export class productsSetBasketPayloadActionType {
-  id!: number;
-  amount!: number;
-}
-
+export interface IProtected{
+  loggedIn: boolean,
+  children: any,
+} 
 
 
-
-//User---------------------
-export class usersInitialStateType {
-  users!: Array<mdlUser>;
-  userLoggedIn!: boolean;
-  adminLoggedIn!: boolean;
-  registerControl!: boolean;
-  activeUser!: mdlUser;
-}
-
-
-export class mdlUser {
-  id!: string;
-  username!: string;
-  password!: string;
+export enum enmUser{
+  user,
+  admin
 }
 

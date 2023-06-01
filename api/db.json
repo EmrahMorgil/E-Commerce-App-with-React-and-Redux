@@ -47,19 +47,28 @@
   ],
   "users": [
     {
+      "id": "1",
+      "username": "admin",
+      "password": "123",
+      "role": 1
+    },
+    {
+      "id": "nvzyom5xhGd37Ni0pVhUx",
       "username": "qwe",
       "password": "qwe",
-      "id": "1"
+      "role": 0
     },
     {
-      "username": "qwerty",
-      "password": "123",
-      "id": "2"
+      "id": "flUFLGnQrnB9cm6mEYUAc",
+      "username": "sdgsd",
+      "password": "gdsfhsdfh",
+      "role": 0
     },
     {
-      "id": "uuK0gHdhq9TKdtisgnFNj",
-      "username": "admin",
-      "password": "123"
+      "id": "_-PWffdbCUZqrYBuYRKgF",
+      "username": "qwesgd",
+      "password": "sfdhdsfhsdfh",
+      "role": 0
     }
   ]
 }
