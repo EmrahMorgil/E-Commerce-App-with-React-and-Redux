@@ -9,11 +9,11 @@ export interface IAddProductButton{
     newProduct: mdlProduct;
     setNewProduct: React.Dispatch<React.SetStateAction<{
       id: string;
-      photo: string[];
+      photo: never[];
       name: string;
       price: string;
       amount: number;
-  }>>
+  }>>;
   setProductPhoto: React.Dispatch<React.SetStateAction<string>>;
 }
 

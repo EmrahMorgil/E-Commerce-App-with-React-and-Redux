@@ -1,16 +1,30 @@
 import React, { useState } from "react";
 import AddProductInputs from "./AddProductInputs";
 import AddProductButton from "./AddProductButton";
+import { mdlProduct } from "../../types/Type";
 
 const AddProductModal: React.FC = () => {
   const [newProduct, setNewProduct] = useState({
     id: "",
-    photo: [""],
+    photo: [],
     name: "",
     price: "",
     amount: 0,
   });
   const [productPhoto, setProductPhoto] = useState("");
+
+  const removePhoto = (item: string)=>{
+    let removedPhoto = newProduct.photo.filter((product: string)=>{
+      if(product!==item)
+      {
+        return product;
+      }
+    })
+
+    setNewProduct({...newProduct, ["photo"]: removedPhoto});
+
+
+  }
 
   return (
     <div
@@ -49,7 +63,11 @@ const AddProductModal: React.FC = () => {
           {newProduct.photo.map((i)=>{
             if(i)
             {
-              return <div><img src={i} width="100px" height="150px" /></div>
+              return <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+                <img src={i} width="100px" height="150px" />
+                <input className="mt-2" value={i}/>
+                <button className="btn btn-danger mt-2" onClick={()=>removePhoto(i)}>X</button>
+                </div>
             }
           })}
           </div>

@@ -15,6 +15,7 @@ const AddProductInputs: React.FC<IAddProductInputs> = ({newProduct, setNewProduc
     }
 
     const addPhoto = (e: any)=>{
+            setProductPhoto("");
             e.preventDefault();
             newProduct.photo.push(productPhoto);
             setNewProduct({...newProduct});

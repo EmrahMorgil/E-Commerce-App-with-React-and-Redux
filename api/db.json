@@ -65,15 +65,22 @@
       "amount": 0
     },
     {
-      "id": "qCG0yu8752Bz0zr_6CqaZ",
+      "id": "ugSBOWV3P1YR8rWWVA0BI",
       "photo": [
-        "",
-        "https://resim.epey.com/613344/b_apple-iphone-12-10.jpg",
-        "https://resim.epey.com/613344/b_apple-iphone-12-10.jpg",
         "https://resim.epey.com/613344/b_apple-iphone-12-10.jpg"
       ],
-      "name": "iPhone 12 pro max",
+      "name": "iPhone 12",
       "price": "150",
+      "amount": 0
+    },
+    {
+      "id": "uK3H2wfTXTuaCqT0hSAMw",
+      "photo": [
+        "https://resim.epey.com/613344/b_apple-iphone-12-11.jpg",
+        "https://resim.epey.com/613344/b_apple-iphone-12-11.jpg"
+      ],
+      "name": "iPhone XX",
+      "price": "10",
       "amount": 0
     }
   ],
