@@ -5,7 +5,7 @@ import axios from "axios";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
 import Login from "./Login";
-import { UserType } from "../types/Type";
+import { mdlUser } from "../types/Type";
 import { useSelector, useDispatch } from "react-redux";
 import { setRegisterControl } from "../redux/users/usersSlice";
 import { addUsers } from "../redux/users/usersSlice";
@@ -18,14 +18,14 @@ const Register: React.FC = () => {
   const users = useSelector((state: RootState) => state.users.users);
   const registerControl = useSelector((state: RootState) => state.users.registerControl);
 
-  const [input, setInput] = useState<UserType>({id: "", username: "", password: "" });
+  const [input, setInput] = useState<mdlUser>({id: "", username: "", password: "" });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput({ ...input, [e.target.name]: e.target.value });
   };
 
   const userRegister = async () => {
-    const newArr = users.map((item: UserType) => item.username === input.username);
+    const newArr = users.map((item: mdlUser) => item.username === input.username);
 
     if (newArr.includes(true)) {
       toast.error("Seçtiğiniz Kullanıcı Adı Kullanılıyor!");

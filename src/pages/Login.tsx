@@ -1,12 +1,12 @@
 import React, { useState, useEffect }  from "react";
 import "../styles/App.css";
 import { Link } from "react-router-dom";
-import Users from "./Users";
-import { UserType } from "../types/Type";
+import Users from "./UserPage";
+import { mdlUser } from "../types/Type";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
 import { useSelector, useDispatch } from "react-redux";
-import { setRegisterControl, setUserLoggedIn, setWelcomeUser} from "../redux/users/usersSlice";
+import { setActiveUser, setRegisterControl, setUserLoggedIn} from "../redux/users/usersSlice";
 import { RootState } from "../redux/store";
 import { getUsersAsync } from "../services/userService";
 
@@ -16,20 +16,22 @@ const Login: React.FC = () => {
   const userLoggedIn = useSelector((state: RootState) => state.users.userLoggedIn);
   const users = useSelector((state: RootState) => state.users.users);
 
-  const [input, setInput] = useState<UserType>({ id: "", username: "", password: "" });
+  const [input, setInput] = useState<mdlUser>({ id: "", username: "", password: "" });
 
   useEffect(() => {
     dispatch(getUsersAsync());
   }, [dispatch]);
 
   const userLogin = () => {
-    const newArr = users.map((item: UserType) =>
-        item.username === input.username && item.password === input.password
-    );
+    const User = users.filter((item: mdlUser) =>{
+      if(item.username === input.username && item.password === input.password)
+      {
+        return item;
+      }});
 
-    if (newArr.includes(true)) {
+    if (User.length>0) {
       if(input.username)
-      dispatch(setWelcomeUser(input.username));
+      dispatch(setActiveUser(User[0]));
       <Link to="/users" />;
       toast.success("Kullanıcı Girişi Başarılı...");
       dispatch(setUserLoggedIn(true));

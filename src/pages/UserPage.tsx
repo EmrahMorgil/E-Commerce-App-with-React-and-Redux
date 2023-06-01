@@ -4,31 +4,27 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setUserLoggedIn } from '../redux/users/usersSlice';
 import { RootState } from '../redux/store';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
+import { mdlUser } from '../types/Type';
+import Logout from '../components/Logout';
 
-const Users: React.FC = () => {
+const UserPage: React.FC = () => {
 
    const dispatch = useDispatch();
-   const welcomeUser = useSelector((state:RootState)=>state.users.welcomeUser);
-   
-
-  const userLogout = ()=>{
-    toast.warning("Çıkış Yapılıyor..");
-    dispatch(setUserLoggedIn(false));
-  }
+   const activeUser: mdlUser = useSelector((state:RootState)=>state.users.activeUser);
 
   return (
     <div style={{height: "87.5vh", display: "flex", flexDirection: "column", alignItems: "center", marginTop: "5rem"}}>
-        <h1 className={`nightTheme`}>Welcome {welcomeUser}</h1>
+        <h1 className={`nightTheme`}>Welcome {activeUser.username}</h1>
         <hr style={{border: "1px solid white", width: "10rem"}}/>
         <div style={{textAlign: "center"}}>
       
         <h3 style={{color: "white"}}><button className='userSettingPage'>Orders</button></h3>
         <h3 style={{color: "white"}}><button className='userSettingPage'>My Adress</button></h3>
         <h3 style={{color: "white"}}><button className='userSettingPage'>Settings</button></h3>
-        <button className='btn btn-danger' onClick={userLogout}>Logout</button>
+        <Logout />
         </div>
     </div>
   )
 }
 
-export default Users
+export default UserPage;

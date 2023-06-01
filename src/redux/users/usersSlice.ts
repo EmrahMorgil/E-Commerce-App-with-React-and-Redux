@@ -7,7 +7,7 @@ const initialState: usersInitialStateType = {
   userLoggedIn: false,
   adminLoggedIn: false,
   registerControl: false,
-  welcomeUser: "",
+  activeUser: {id: "", username: "", password: ""},
 }
 
 export const usersSlice = createSlice({
@@ -27,8 +27,8 @@ export const usersSlice = createSlice({
     setRegisterControl: (state, action)=>{
       state.registerControl = action.payload;
     },
-    setWelcomeUser: (state, action)=>{
-      state.welcomeUser = action.payload;
+    setActiveUser: (state, action)=>{
+      state.activeUser = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -39,4 +39,4 @@ export const usersSlice = createSlice({
 });
 
 export default usersSlice.reducer;
-export const { addUsers,setUserLoggedIn, setRegisterControl, setWelcomeUser, setAdminLoggedIn } = usersSlice.actions;
+export const { addUsers,setUserLoggedIn, setRegisterControl, setActiveUser, setAdminLoggedIn } = usersSlice.actions;

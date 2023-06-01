@@ -27,9 +27,6 @@ export class homeItemType {
 }
 
 
-
-//Product--------------------------
-
 export class productsSetBasketPayloadActionType {
   id!: number;
   amount!: number;
@@ -40,15 +37,15 @@ export class productsSetBasketPayloadActionType {
 
 //User---------------------
 export class usersInitialStateType {
-  users!: Array<UserType>;
-  userLoggedIn?: boolean;
-  adminLoggedIn?: boolean;
-  registerControl?: boolean;
-  welcomeUser?: string;
+  users!: Array<mdlUser>;
+  userLoggedIn!: boolean;
+  adminLoggedIn!: boolean;
+  registerControl!: boolean;
+  activeUser!: mdlUser;
 }
 
 
-export class UserType {
+export class mdlUser {
   id!: string;
   username!: string;
   password!: string;
