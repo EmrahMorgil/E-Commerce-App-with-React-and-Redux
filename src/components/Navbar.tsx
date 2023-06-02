@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
 
 
   return (
-    <nav className="navbar justify-content-between">
+    <nav className="navbar">
       <div className="navbar-brand">
         <Link
           to="/"

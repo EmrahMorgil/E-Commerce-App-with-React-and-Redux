@@ -1,4 +1,6 @@
-
+h3 {
+  font-family: "Times New Roman", Times, serif;
+}
 
 /* Products Page */
 .product-background{
@@ -419,6 +421,13 @@ img{
 	color: white
   }
   
+  .fixedNavbar{
+    position: "fixed"; 
+    background-color: "black"; 
+    color:"white"; 
+    z-index: "1"; 
+    width: "100%";
+  }
 
 
 

@@ -29,21 +29,18 @@ const FocusProduct: React.FC = () => {
     <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel" style={{width: "300px",marginLeft: "5rem"}}>
         
         <div className="carousel-inner mt-4">
-          <div className="carousel-item active">
-            <img className="focusPhoto" src={clickedData.photo[0]} alt="First slide" />
-          </div>
-          <div className="carousel-item">
-            <img className="focusPhoto" src={clickedData.photo[1]} alt="Second slide" />
-          </div>
-          <div className="carousel-item">
-            <img className="focusPhoto" src={clickedData.photo[2]} alt="Third slide" />
-          </div>
+        {clickedData.photo.map((i, key)=>{
+          return (
+                  <div className={`${key === 0 ? "carousel-item active" : "carousel-item"}`}>
+                    <img className="focusPhoto" src={i} alt="First slide" />
+                  </div>
+                )
+        })}
         </div>
-        
-        <ol className="carousel-indicators" style={{gap: "5px"}}>
-          <img src={clickedData.photo[0]} style={{width: "40px", height: "60px"}} data-target="#carouselExampleIndicators" data-slide-to={0} className="active"/>
-          <img src={clickedData.photo[1]} style={{width: "40px", height: "60px"}} data-target="#carouselExampleIndicators" data-slide-to={1} />
-          <img src={clickedData.photo[2]} style={{width: "40px", height: "60px"}} data-target="#carouselExampleIndicators" data-slide-to={2} />
+        <ol className="carousel-indicators" style={{gap: "5px", display: "flex", flexWrap: "wrap"}}>
+          {clickedData.photo.map((i, key)=>{
+            return <img src={i} style={{width: "40px", height: "60px"}} data-target="#carouselExampleIndicators" data-slide-to={key}/>
+          })}
           </ol>
       </div>
     </div>
