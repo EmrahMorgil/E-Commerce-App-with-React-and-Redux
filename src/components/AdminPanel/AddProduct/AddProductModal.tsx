@@ -71,7 +71,7 @@ const AddProductModal: React.FC = () => {
             if(i)
             {
               return <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
-                <img src={i} width="100px" height="150px" />
+                <img src={i} width="100px" height="140px" />
                 <input className="mt-2" value={i} onChange={(e)=>photoChange(e, i)}/>
                 <DeleteOnProductButton item={i} newProduct={newProduct} setNewProduct={setNewProduct}/>
                 </div>

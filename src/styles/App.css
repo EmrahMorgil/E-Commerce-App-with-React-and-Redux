@@ -21,20 +21,22 @@ html {
 
 .productsContainer {
   border: 1px solid rgba(255, 255, 255, 0.125);  
-  padding: 38px;  
+  padding: 20px;  
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content:center;
   text-align: center;
-  width: 400px;
-  height: 600px;
+  width: 20rem;
+  height: 25rem;
 }
 
 .productsWrapper {
   width: 100%;
   height: 100%;
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .banner-image {
@@ -42,6 +44,10 @@ html {
   padding: 30px;
   border-radius: 12px;
   border: 1px solid rgba(255,255,255, 0.255);
+  align-items: center;
+  width: 8rem;
+  display: flex;
+  justify-content: center;
 }
 
 .productsContainer h1{
@@ -180,10 +186,10 @@ body{
     max-width: 1100px;
     margin: 0 auto;
 }
-img{
+/* img{
     width: 100%;
     display: block;
-}
+} */
 .img-display{
     overflow: hidden;
 }

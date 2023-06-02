@@ -34,8 +34,7 @@ const Product: React.FC<basketItemType> = ({ product, page }) => {
   return (<section id="products">
 
     <div className="item">
-      <div
-        className={page == "adminpanel" ? "productsContainer" : "productsContainer reveal"}
+      <div className={page == "adminpanel" ? "productsContainer" : "productsContainer reveal"}
         style={{ backgroundColor: "#1C1C1C" }}
       >
         <a href={`/product/${product.id}`} style={{ textDecoration: "none" }}>
@@ -43,7 +42,7 @@ const Product: React.FC<basketItemType> = ({ product, page }) => {
             <div className="banner-image">
               <img
                 src={product.photo[0]}
-                style={{ width: "130px", height: "200px" }}
+                style={{ width: "60px", height: "100px" }}
               />
             </div>
             <h4 style={{ color: "white" }}>{product?.name}</h4>

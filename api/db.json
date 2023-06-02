@@ -3,7 +3,7 @@
     {
       "id": "asdqwe123123",
       "photo": [
-        "https://resim.epey.com/613344/b_apple-iphone-12-2.png",
+        "https://resim.epey.com/839868/b_xiaomi-13-pro-2.png",
         "https://resim.epey.com/223976/b_apple-iphone-11-4.jpg",
         "https://resim.epey.com/223976/b_apple-iphone-11-3.png",
         "https://resim.epey.com/223976/b_apple-iphone-11-7.png",
@@ -17,9 +17,7 @@
     {
       "id": "asdqwe134",
       "photo": [
-        "https://resim.epey.com/663858/b_redmi-note-10s-1.png",
-        "https://resim.epey.com/105370/b_huawei-p20-pro-5.png",
-        "https://resim.epey.com/663858/b_redmi-note-10s-1.png"
+        "https://resim.epey.com/839868/b_xiaomi-13-pro-2.png"
       ],
       "name": "Samsung S9 Ultra",
       "price": "49.99",
@@ -67,6 +65,24 @@
       ],
       "name": "iPhone 15 Plus",
       "price": "700",
+      "amount": 1
+    },
+    {
+      "id": "47FZg3iOGQ1X3hiQjRkD4",
+      "photo": [
+        "https://resim.epey.com/839868/b_xiaomi-13-pro-2.png"
+      ],
+      "name": "Xia",
+      "price": "10",
+      "amount": 1
+    },
+    {
+      "id": "1SIWL9Cl8nYvWDtpSg2sa",
+      "photo": [
+        "https://resim.epey.com/839868/b_xiaomi-13-pro-7.png"
+      ],
+      "name": "Samsung Galaxy S25 Ultra Cep Telefonu",
+      "price": "10",
       "amount": 1
     }
   ],
