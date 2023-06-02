@@ -11,7 +11,7 @@ const AddProductModal: React.FC = () => {
     photo: [],
     name: "",
     price: "",
-    amount: 0,
+    amount: 1,
   });
   const [productPhoto, setProductPhoto] = useState("");
 

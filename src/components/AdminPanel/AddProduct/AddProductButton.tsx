@@ -20,7 +20,7 @@ const AddProductButton: React.FC<IAddProductButton> = ({newProduct, setNewProduc
           newProduct.id = nanoid();
           dispatch(addProducts(newProduct));
           addProductsAsync(newProduct);
-          setNewProduct({id: "", photo: [], name: "", price: "", amount: 0});
+          setNewProduct({id: "", photo: [], name: "", price: "", amount: 1});
           setProductPhoto("");
         }
     }

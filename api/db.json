@@ -45,50 +45,26 @@
       "amount": 1
     },
     {
-      "id": "S_oOR6recjtYJHLd7p30T",
-      "photo": [],
-      "name": "iphone123",
-      "price": "500",
-      "amount": 0
-    },
-    {
-      "id": "erfCXZ0KEd3_ETBBZBce2",
-      "photo": [],
-      "name": "iPhone XXX",
-      "price": "123123",
-      "amount": 0
-    },
-    {
-      "id": "jOq3L4K2ZL7Xoqmt0slT0",
-      "photo": [],
-      "name": "iPhone XX",
-      "price": "120",
-      "amount": 0
-    },
-    {
-      "id": "hYjtmbripoo30Evei3Rms",
+      "id": "lvGXWVE6IQLAclouLphea",
       "photo": [
-        "deneme3"
+        "https://resim.epey.com/716503/b_apple-iphone-13-12.jpg",
+        "https://resim.epey.com/716503/b_apple-iphone-13-18.jpg",
+        "https://resim.epey.com/716503/b_apple-iphone-13-14.jpg"
       ],
-      "name": "iPhone X",
+      "name": "iPhone 12 Pro",
       "price": "150",
-      "amount": 0
+      "amount": 1
     },
     {
-      "id": "Ywj4tI82XahtRelPsOeU5",
+      "id": "a2GeCoZDUQUbKw3bg6cuN",
       "photo": [
-        "https://resim.epey.com/716503/b_apple-iphone-13-7.jpg"
+        "https://resim.epey.com/716503/b_apple-iphone-13-23.jpg",
+        "https://resim.epey.com/716503/b_apple-iphone-13-19.jpg",
+        "https://resim.epey.com/716503/b_apple-iphone-13-13.jpg"
       ],
-      "name": "iPhone 123",
-      "price": "10",
-      "amount": 0
-    },
-    {
-      "id": "PuzUZpWCoh6B6Ma43D64b",
-      "photo": [],
-      "name": "Samsung Galaxy i3",
-      "price": "100",
-      "amount": 0
+      "name": "iPhone 15 Plus",
+      "price": "700",
+      "amount": 1
     }
   ],
   "users": [
