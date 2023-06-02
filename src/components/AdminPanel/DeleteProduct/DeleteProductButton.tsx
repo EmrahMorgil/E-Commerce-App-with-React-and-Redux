@@ -3,6 +3,7 @@ import { mdlProduct } from '../../../types/Type'
 import { deleteProductsAsync } from '../../../services/productService';
 import { useDispatch } from 'react-redux';
 import { deleteProducts } from '../../../redux/products/productsSlice';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 export interface IDeleteProductButton{
     product: mdlProduct;
@@ -18,7 +19,7 @@ const DeleteProductButton: React.FC<IDeleteProductButton> = ({product}) => {
     }
 
   return (
-    <button className='btn btn-danger' onClick={()=>deleteProduct(product)}>Delete</button>
+    <button className='btn btn-danger' onClick={()=>deleteProduct(product)}><DeleteIcon /></button>
   )
 }
 

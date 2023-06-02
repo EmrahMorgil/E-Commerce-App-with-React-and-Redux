@@ -44,7 +44,7 @@ const AddBasketButton: React.FC<IAddBasketButton> = ({ product }) => {
   };
 
   return (
-    <button className="btn fill" onClick={addBasketItem}>
+    <button className="pbtn fill" onClick={addBasketItem}>
       BUY NOW
     </button>
   );

@@ -1,5 +1,6 @@
 import React from 'react'
 import { mdlProduct } from '../../../types/Type'
+import DeleteIcon from '@mui/icons-material/Delete';
 
 export interface IDeleteOnProductButton{
     item: string;
@@ -21,7 +22,7 @@ const DeleteOnProductButton: React.FC<IDeleteOnProductButton> = ({item, newProdu
       }
 
   return (
-    <button className="btn btn-danger mt-2" onClick={()=>removePhoto(item)}>X</button>
+    <button className="btn btn-danger mt-2" onClick={()=>removePhoto(item)}><DeleteIcon /></button>
   )
 }
 

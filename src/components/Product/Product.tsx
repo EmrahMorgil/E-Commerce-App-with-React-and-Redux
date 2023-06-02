@@ -3,9 +3,9 @@ import { basketItemType } from "../../types/Type";
 import AddBasketButton from "../Basket/AddBasketButton";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
-import UpdateProductButton from "../AdminPanel/UpdateProduct/UpdateProductButton";
 import DeleteProductButton from "../AdminPanel/DeleteProduct/DeleteProductButton";
 import UpdateProductModal from "../AdminPanel/UpdateProduct/UpdateProductModal";
+import SyncAltIcon from '@mui/icons-material/SyncAlt';
 
 const Product: React.FC<basketItemType> = ({ product, page }) => {
   const adminLoggedIn = useSelector(
@@ -50,23 +50,23 @@ const Product: React.FC<basketItemType> = ({ product, page }) => {
         </Link>
         <div className="button-wrapper">
           {page == "adminpanel" ? (
-            <>
+            <div style={{display: "flex", gap: "1rem"}}>
               <button
                 type="button"
-                className="btn btn-primary"
+                className="btn btn-warning"
                 data-toggle="modal"
                 data-target={`#update${product.id}`}
               >
-                Update
+                <SyncAltIcon />
               </button>
               <UpdateProductModal product={product}/>
 
               <DeleteProductButton product={product} />
-            </>
+            </div>
           ) : (
             <>
               <Link to={`/product/${product?.id}`}>
-                <button className="btn outline mr-3">DETAILS</button>
+                <button className="pbtn outline mr-3">DETAILS</button>
               </Link>
               <AddBasketButton product={product} />
             </>
