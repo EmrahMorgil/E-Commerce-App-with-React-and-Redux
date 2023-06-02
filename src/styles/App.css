@@ -59,7 +59,7 @@
   margin-top: 18px;
 }
 
-.productsContainer .pbtn {
+.pbtn {
   border: none;
   padding: 12px 24px;
   border-radius: 24px;
@@ -88,7 +88,7 @@
   transition: all .3s ease;  
 }
 
-.productsContainer .fill {
+.pfill {
   background: rgba(0, 212, 255, 0.9);
   color: rgba(255,255,255,0.95);
   filter: drop-shadow(0);
@@ -98,13 +98,14 @@
 
 
 
-.productsContainer .fill:hover{
+.pfill:hover{
   transform: scale(1.125);  
   border-color: rgba(255, 255, 255, 0.9);
   filter: drop-shadow(0 10px 5px rgba(0,0,0,0.125));
   transition: all .3s ease;    
 }
-.productsContainer .fill:active{
+.pfill:active{
+  border: 0px;
   transform: scale(1.125);  
   /* border-color: rgba(255, 255, 255, 0.9); */
   background-color: white;
