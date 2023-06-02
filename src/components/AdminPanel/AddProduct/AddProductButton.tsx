@@ -1,9 +1,9 @@
 import React from 'react'
-import { mdlProduct } from '../../types/Type'
-import { addProducts } from '../../redux/products/productsSlice';
 import { useDispatch } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
-import { addProductsAsync } from '../../services/productService';
+import { mdlProduct } from '../../../types/Type';
+import { addProducts } from '../../../redux/products/productsSlice';
+import { addProductsAsync } from '../../../services/productService';
 
 export interface IAddProductButton{
     newProduct: mdlProduct;

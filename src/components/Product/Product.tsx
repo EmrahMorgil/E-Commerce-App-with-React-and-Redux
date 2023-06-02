@@ -3,9 +3,9 @@ import { basketItemType } from "../../types/Type";
 import AddBasketButton from "../Basket/AddBasketButton";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
-import UpdateProductButton from "../AdminPanel/UpdateProductButton";
-import DeleteProductButton from "../AdminPanel/DeleteProductButton";
-import UpdateProductModal from "../AdminPanel/UpdateProductModal";
+import UpdateProductButton from "../AdminPanel/UpdateProduct/UpdateProductButton";
+import DeleteProductButton from "../AdminPanel/DeleteProduct/DeleteProductButton";
+import UpdateProductModal from "../AdminPanel/UpdateProduct/UpdateProductModal";
 
 const Product: React.FC<basketItemType> = ({ product, page }) => {
   const adminLoggedIn = useSelector(

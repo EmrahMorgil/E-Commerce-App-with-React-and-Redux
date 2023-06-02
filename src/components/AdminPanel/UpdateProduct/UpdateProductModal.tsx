@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { mdlProduct } from '../../types/Type'
+import { mdlProduct } from '../../../types/Type'
 import UpdateProductInputs from './UpdateProductInputs';
-import { updateProductsAsync } from '../../services/productService';
-import { RootState } from '../../redux/store';
+import { updateProductsAsync } from '../../../services/productService';
+import { RootState } from '../../../redux/store';
 import { useDispatch, useSelector } from 'react-redux';
-import { setProducts } from '../../redux/products/productsSlice';
-import DeleteOnProductButton from './DeleteOnProductButton';
+import { setProducts } from '../../../redux/products/productsSlice';
+import DeleteOnProductButton from '../DeleteProduct/DeleteOnProductButton';
 
 export interface IUpdateProductModal{
     product: mdlProduct;

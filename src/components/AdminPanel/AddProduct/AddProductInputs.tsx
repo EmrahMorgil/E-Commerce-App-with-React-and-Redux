@@ -1,6 +1,6 @@
 import React from 'react'
-import { mdlProduct } from '../../types/Type'
 import AddOnProductButton from './AddOnProductButton';
+import { mdlProduct } from '../../../types/Type';
 
 export interface IAddProductInputs{
     newProduct: mdlProduct;

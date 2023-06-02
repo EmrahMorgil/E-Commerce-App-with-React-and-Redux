@@ -1,5 +1,5 @@
 import React from 'react'
-import { mdlProduct } from '../../types/Type';
+import { mdlProduct } from '../../../types/Type';
 
 export interface IAddOnProductButton{
     productPhoto: string;

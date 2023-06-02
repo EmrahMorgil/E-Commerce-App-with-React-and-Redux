@@ -46,9 +46,7 @@
     },
     {
       "id": "S_oOR6recjtYJHLd7p30T",
-      "photo": [
-        "https://resim.epey.com/613344/b_apple-iphone-12-10.jpg"
-      ],
+      "photo": [],
       "name": "iphone123",
       "price": "500",
       "amount": 0
@@ -73,8 +71,8 @@
     {
       "id": "hYjtmbripoo30Evei3Rms",
       "photo": [],
-      "name": "iPhone XXX",
-      "price": "23",
+      "name": "iPhone X",
+      "price": "150",
       "amount": 0
     }
   ],

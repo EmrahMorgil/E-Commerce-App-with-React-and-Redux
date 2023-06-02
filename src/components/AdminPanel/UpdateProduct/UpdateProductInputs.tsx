@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { mdlProduct } from "../../types/Type";
+import { mdlProduct } from "../../../types/Type";
 
 export interface IUpdateProductInputs {
   updateProduct: mdlProduct;

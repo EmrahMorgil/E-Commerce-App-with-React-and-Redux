@@ -2,8 +2,8 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { RootState } from '../redux/store'
 import ProductList from '../components/Product/ProductList';
-import AddProductModal from '../components/AdminPanel/AddProductModal';
 import Logout from '../components/Logout';
+import AddProductModal from '../components/AdminPanel/AddProduct/AddProductModal';
 
 const AdminPanel: React.FC = () => {
 

@@ -1,8 +1,8 @@
 import React from 'react'
-import { mdlProduct } from '../../types/Type'
-import { deleteProductsAsync } from '../../services/productService';
+import { mdlProduct } from '../../../types/Type'
+import { deleteProductsAsync } from '../../../services/productService';
 import { useDispatch } from 'react-redux';
-import { deleteProducts } from '../../redux/products/productsSlice';
+import { deleteProducts } from '../../../redux/products/productsSlice';
 
 export interface IDeleteProductButton{
     product: mdlProduct;

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import AddProductInputs from "./AddProductInputs";
 import AddProductButton from "./AddProductButton";
-import { mdlProduct } from "../../types/Type";
-import DeleteOnProductButton from "./DeleteOnProductButton";
+import { mdlProduct } from "../../../types/Type";
+import DeleteOnProductButton from "../DeleteProduct/DeleteOnProductButton";
 
 const AddProductModal: React.FC = () => {
   const [newProduct, setNewProduct] = useState<mdlProduct>({
