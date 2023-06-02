@@ -5,7 +5,7 @@ import { getUsersAsync } from "../../services/userService";
 const initialState: usersInitialStateType = {
   users: [],
   userLoggedIn: false,
-  adminLoggedIn: true,
+  adminLoggedIn: false,
   registerControl: false,
   activeUser: {id: "", username: "", password: "", role: 0},
 }

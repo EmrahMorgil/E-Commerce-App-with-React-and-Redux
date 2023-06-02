@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
     <nav className="navbar justify-content-between">
       <div className="navbar-brand">
         <Link
-          to="/products"
+          to="/"
           style={{ textDecoration: "none" }}
           className={"navbar-title-nightTheme"}>
           E - Commerce App

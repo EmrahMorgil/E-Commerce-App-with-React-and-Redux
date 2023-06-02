@@ -22,7 +22,7 @@ function App() {
       <div className="main" style={{ backgroundColor: "black" }}>
         <Navbar />
         <Routes>
-          <Route path="/products" element={<Products />} />
+          <Route path="/" element={<Products />} />
           <Route path="/basket" element={<Basket />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
