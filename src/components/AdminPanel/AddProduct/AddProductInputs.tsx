@@ -1,5 +1,5 @@
 import React from 'react'
-import AddOnProductButton from './AddOnProductButton';
+import AddOnProductButton from '../OnProduct/AddOnProductButton';
 import { mdlProduct } from '../../../types/Type';
 
 export interface IAddProductInputs{
@@ -13,13 +13,6 @@ const AddProductInputs: React.FC<IAddProductInputs> = ({newProduct, setNewProduc
 
     const handleChange = (e: any)=>{
         setNewProduct({...newProduct, [e.target.name] : e.target.value});
-    }
-
-    const addPhoto = (e: any)=>{
-            setProductPhoto("");
-            e.preventDefault();
-            newProduct.photo.push(productPhoto);
-            setNewProduct({...newProduct});
     }
 
   return (
@@ -38,7 +31,7 @@ const AddProductInputs: React.FC<IAddProductInputs> = ({newProduct, setNewProduc
             
             <input name='photo' onChange={(e)=>setProductPhoto(e.target.value)} style={{width: "200px"}} value={productPhoto}/>
             {/* <button className='btn btn-success mt-1' onClick={(e)=>addPhoto(e)}>Add Photo</button> */}
-            <AddOnProductButton productPhoto={productPhoto} setProductPhoto={setProductPhoto} newProduct={newProduct} setNewProduct={setNewProduct}/>
+            
         </div>
     </div>
   )

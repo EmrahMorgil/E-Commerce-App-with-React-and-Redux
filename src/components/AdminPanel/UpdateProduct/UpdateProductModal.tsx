@@ -5,7 +5,8 @@ import { updateProductsAsync } from '../../../services/productService';
 import { RootState } from '../../../redux/store';
 import { useDispatch, useSelector } from 'react-redux';
 import { setProducts } from '../../../redux/products/productsSlice';
-import DeleteOnProductButton from '../DeleteProduct/DeleteOnProductButton';
+import DeleteOnProductButton from '../OnProduct/DeleteOnProductButton';
+import AddOnProductButton from '../OnProduct/AddOnProductButton';
 
 export interface IUpdateProductModal{
     product: mdlProduct;
@@ -24,8 +25,9 @@ const UpdateProductModal: React.FC<IUpdateProductModal> = ({product}) => {
     amount: product.amount
 });
 
-const updatedProducts = ()=>{
+const [productPhoto, setProductPhoto] = useState<string>("");
 
+const updatedProducts = ()=>{
   let updatedProducts = products.map((item: mdlProduct)=>{
     if(product.id==item.id)
         {
@@ -34,11 +36,23 @@ const updatedProducts = ()=>{
           return item;
         }
     });
-  
   dispatch(setProducts(updatedProducts));
-
   updateProductsAsync(updateProduct);
 }
+
+const photoChange = (e: any, i: string)=>{
+  let updatedPhotos = updateProduct.photo.map((photo: string)=>{
+    if(photo==i)
+    {
+      return e.target.value;
+    }else{
+      return photo;
+    }
+  })
+
+  setUpdateProduct({...updateProduct, ["photo"]: updatedPhotos});
+}
+
 
   return (
     <div className="modal fade" id={"update"+product.id} tabIndex={-1} role="dialog" >
@@ -51,7 +65,8 @@ const updatedProducts = ()=>{
               </button>
             </div>
             <div className="modal-body">
-              <UpdateProductInputs updateProduct={updateProduct} setUpdateProduct={setUpdateProduct}/>
+              <UpdateProductInputs updateProduct={updateProduct} setUpdateProduct={setUpdateProduct} productPhoto={productPhoto} setProductPhoto={setProductPhoto}/>
+              <AddOnProductButton productPhoto={productPhoto} setProductPhoto={setProductPhoto} newProduct={updateProduct} setNewProduct={setUpdateProduct}/>
             </div>
             <div style={{display: "flex",flexDirection: "column" , margin: "2rem 8rem", gap: "1rem", justifyContent: "center"}}>
 
@@ -60,7 +75,7 @@ const updatedProducts = ()=>{
             {
               return <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
                 <img src={i} width="100px" height="150px" />
-                <input className="mt-2" value={i} />
+                <input className="mt-2" value={i} onChange={(e)=>photoChange(e, i)}/>
                 <DeleteOnProductButton item={i} newProduct={updateProduct} setNewProduct={setUpdateProduct}/>
                 </div>
             }

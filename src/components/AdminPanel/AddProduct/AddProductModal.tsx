@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import AddProductInputs from "./AddProductInputs";
 import AddProductButton from "./AddProductButton";
 import { mdlProduct } from "../../../types/Type";
-import DeleteOnProductButton from "../DeleteProduct/DeleteOnProductButton";
+import DeleteOnProductButton from "../OnProduct/DeleteOnProductButton";
+import AddOnProductButton from "../OnProduct/AddOnProductButton";
 
 const AddProductModal: React.FC = () => {
   const [newProduct, setNewProduct] = useState<mdlProduct>({
@@ -53,12 +54,16 @@ const AddProductModal: React.FC = () => {
             </button>
           </div>
           <div className="modal-body">
+            <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+
             <AddProductInputs
               newProduct={newProduct}
               setNewProduct={setNewProduct}
               productPhoto={productPhoto}
               setProductPhoto={setProductPhoto}
-            />
+              />
+            <AddOnProductButton productPhoto={productPhoto} setProductPhoto={setProductPhoto} newProduct={newProduct} setNewProduct={setNewProduct}/>
+              </div>
           </div>
           <div style={{display: "flex",flexDirection: "column" , margin: "2rem 8rem", gap: "1rem", justifyContent: "center"}}>
 

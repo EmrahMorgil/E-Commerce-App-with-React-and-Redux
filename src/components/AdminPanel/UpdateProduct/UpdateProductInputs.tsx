@@ -4,24 +4,14 @@ import { mdlProduct } from "../../../types/Type";
 export interface IUpdateProductInputs {
   updateProduct: mdlProduct;
   setUpdateProduct: React.Dispatch<React.SetStateAction<mdlProduct>>;
+  productPhoto: string;
+  setProductPhoto: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const UpdateProductInputs: React.FC<IUpdateProductInputs> = ({ updateProduct, setUpdateProduct }) => {
+const UpdateProductInputs: React.FC<IUpdateProductInputs> = ({ updateProduct, setUpdateProduct, productPhoto, setProductPhoto }) => {
 
     const handleChange = (e: any)=>{
         setUpdateProduct({...updateProduct, [e.target.name]: e.target.value});
-    }
-
-    const photoChange = (e: any, i: string)=>{
-      let updatedPhotos = updateProduct.photo.map((photo: string)=>{
-        if(photo==i)
-        {
-          return e.target.value;
-        }else{
-          return photo;
-        }
-      });
-      setUpdateProduct({...updateProduct, ["photo"]: updatedPhotos});
     }
 
   return (
@@ -36,8 +26,7 @@ const UpdateProductInputs: React.FC<IUpdateProductInputs> = ({ updateProduct, se
       </div>
       <div style={{display: "flex", flexDirection: "column"}}>
         <label style={{textAlign: "center"}}>Product Photos: </label>
-        <input name='photo' />
-        <button className='btn btn-success mt-1' >Add Photo</button>
+        <input name='photo' onChange={(e)=>setProductPhoto(e.target.value)} style={{width: "200px"}} value={productPhoto}/>
       </div>
     </div>
   );

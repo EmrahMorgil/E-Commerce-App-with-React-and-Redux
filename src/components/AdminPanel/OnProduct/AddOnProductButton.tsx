@@ -12,10 +12,9 @@ const AddOnProductButton: React.FC<IAddOnProductButton> = ({productPhoto, setPro
 
 
     const addPhoto = (e: any)=>{
-        setProductPhoto("");
-        e.preventDefault();
-        newProduct.photo.push(productPhoto);
-        setNewProduct({...newProduct});
+      setProductPhoto("");
+      e.preventDefault();  
+      setNewProduct({...newProduct, ["photo"]: [...newProduct.photo, productPhoto]});
 }
 
   return (
