@@ -24,8 +24,8 @@ const FocusProduct: React.FC = () => {
     <section>
 
     
-   <div className="row" style={{padding: "0px 280px", backgroundColor: "#B0B0B0"}}>
-    <div className="col" style={{height: "40rem"}}>
+   <div className="row" style={{padding: "0px 280px", backgroundColor: "white"}}>
+    <div className="col">
     <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel" style={{width: "300px",marginLeft: "5rem"}}>
         
         <div className="carousel-inner mt-4">
