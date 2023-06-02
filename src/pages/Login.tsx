@@ -50,11 +50,14 @@ const Login: React.FC = () => {
         if (input.username) dispatch(setActiveUser(User[0]));
         toast.success("Kullanıcı Girişi Başarılı...");
         dispatch(setUserLoggedIn(true));
+        localStorage.setItem("userLoggedIn", JSON.stringify(true))
       }else{
         dispatch(setActiveUser(User[0]));
         toast.success("Admin Girişi Başarılı...");
         dispatch(setAdminLoggedIn(true));
+        localStorage.setItem("adminLoggedIn", JSON.stringify(true))
       }
+      localStorage.setItem("activeUser", JSON.stringify(User[0]));
     } else {
       toast.error("Kullanıcı adı ya da şifre hatalı!");
     }

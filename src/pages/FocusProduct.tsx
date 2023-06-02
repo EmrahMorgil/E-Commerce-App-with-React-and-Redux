@@ -18,7 +18,7 @@ const FocusProduct: React.FC = () => {
     fetchData();
   }, []);
 
-  window.scrollTo(0, 0);
+  // window.scrollTo(0, 0);
 
   return (
     <section>

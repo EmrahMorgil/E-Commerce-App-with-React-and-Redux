@@ -8,6 +8,7 @@ import UpdateProductModal from "../AdminPanel/UpdateProduct/UpdateProductModal";
 import SyncAltIcon from '@mui/icons-material/SyncAlt';
 
 const Product: React.FC<basketItemType> = ({ product, page }) => {
+  
   const adminLoggedIn = useSelector(
     (state: RootState) => state.users.adminLoggedIn
   );
@@ -30,13 +31,14 @@ const Product: React.FC<basketItemType> = ({ product, page }) => {
 
   window.addEventListener("scroll", reveal);
 
-  return (
+  return (<section id="products">
+
     <div className="item">
       <div
         className={page == "adminpanel" ? "productsContainer" : "productsContainer reveal"}
         style={{ backgroundColor: "#1C1C1C" }}
       >
-        <Link to={`/product/${product.id}`} style={{ textDecoration: "none" }}>
+        <a href={`/product/${product.id}`} style={{ textDecoration: "none" }}>
           <div className="productsWrapper">
             <div className="banner-image">
               <img
@@ -47,7 +49,7 @@ const Product: React.FC<basketItemType> = ({ product, page }) => {
             <h4 style={{ color: "white" }}>{product?.name}</h4>
             <p>${product.price}</p>
           </div>
-        </Link>
+        </a>
         <div className="button-wrapper">
           {page == "adminpanel" ? (
             <div style={{display: "flex", gap: "1rem"}}>
@@ -74,6 +76,7 @@ const Product: React.FC<basketItemType> = ({ product, page }) => {
         </div>
       </div>
     </div>
+  </section>
   );
 };
 

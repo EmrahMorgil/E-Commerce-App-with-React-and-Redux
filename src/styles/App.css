@@ -2,6 +2,10 @@ h3 {
   font-family: "Times New Roman", Times, serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Products Page */
 .product-background{
   background-image: url(../images/background-photo.webp);

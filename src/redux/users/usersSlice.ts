@@ -4,10 +4,10 @@ import { getUsersAsync } from "../../services/userService";
 
 const initialState: usersInitialStateType = {
   users: [],
-  userLoggedIn: false,
-  adminLoggedIn: true,
+  userLoggedIn: JSON.parse(String(localStorage.getItem("userLoggedIn"))) !== true && false ? false : JSON.parse(String(localStorage.getItem("userLoggedIn"))),
+  adminLoggedIn: JSON.parse(String(localStorage.getItem("adminLoggedIn"))) !== true && false ? false : JSON.parse(String(localStorage.getItem("adminLoggedIn"))),
   registerControl: false,
-  activeUser: {id: "", username: "", password: "", role: 0},
+  activeUser: JSON.parse(String(localStorage.getItem("userLoggedIn"))) === true || JSON.parse(String(localStorage.getItem("adminLoggedIn"))) === true ? JSON.parse(String(localStorage.getItem("activeUser"))) : {},
 }
 
 export const usersSlice = createSlice({
