@@ -66,24 +66,6 @@
       "name": "iPhone 15 Plus",
       "price": "700",
       "amount": 1
-    },
-    {
-      "id": "47FZg3iOGQ1X3hiQjRkD4",
-      "photo": [
-        "https://resim.epey.com/839868/b_xiaomi-13-pro-2.png"
-      ],
-      "name": "Xia",
-      "price": "10",
-      "amount": 1
-    },
-    {
-      "id": "1SIWL9Cl8nYvWDtpSg2sa",
-      "photo": [
-        "https://resim.epey.com/839868/b_xiaomi-13-pro-7.png"
-      ],
-      "name": "Samsung Galaxy S25 Ultra Cep Telefonu",
-      "price": "10",
-      "amount": 1
     }
   ],
   "users": [
@@ -109,6 +91,12 @@
       "id": "_-PWffdbCUZqrYBuYRKgF",
       "username": "qwesgd",
       "password": "sfdhdsfhsdfh",
+      "role": 0
+    },
+    {
+      "id": "nEgMvGz6sr8C41QalqHcA",
+      "username": "deneme",
+      "password": "deneme",
       "role": 0
     }
   ]

@@ -11,6 +11,7 @@ import { setRegisterControl } from "../redux/users/usersSlice";
 import { addUsers } from "../redux/users/usersSlice";
 import { RootState } from "../redux/store";
 import { nanoid } from "@reduxjs/toolkit";
+import { addUsersAsync } from "../services/userService";
 
 const Register: React.FC = () => {
   const dispatch = useDispatch();
@@ -34,13 +35,8 @@ const Register: React.FC = () => {
       dispatch(
         addUsers({ id: randomId, username: input.username, password: input.password, role: input.role })
       );
-
-      await axios.post("http://localhost:3004/users", {
-        id: randomId,
-        username: input.username,
-        password: input.password,
-        role: input.role
-      });
+      let newUser: mdlUser = {id: randomId, username: input.username, password: input.password, role: input.role};
+      addUsersAsync(newUser)
       toast.success("Kayıt Başarılı!");
       setInput({ id: "", username: "", password: "", role: 0});
       dispatch(setRegisterControl(true));
