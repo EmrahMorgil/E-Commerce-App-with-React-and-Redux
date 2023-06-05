@@ -57,6 +57,7 @@ const BasketItem: React.FC<basketItemType> = ({ product }) => {
         <div style={{ display: "flex" }}>
           <img
             className="card-img-top basket-item-img"
+            style={{width: "5rem"}}
             src={product.photo[0]}
             alt={product?.name}
           />

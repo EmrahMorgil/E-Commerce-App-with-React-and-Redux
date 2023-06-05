@@ -66,9 +66,9 @@ const Product: React.FC<basketItemType> = ({ product, page }) => {
             </div>
           ) : (
             <>
-              <Link to={`/product/${product?.id}`}>
+              <a href={`/product/${product.id}`} style={{ textDecoration: "none" }}>
                 <button className="pbtn outline mr-3">DETAILS</button>
-              </Link>
+              </a>
               <AddBasketButton product={product} />
             </>
           )}

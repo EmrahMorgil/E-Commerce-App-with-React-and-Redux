@@ -3,7 +3,6 @@
     {
       "id": "asdqwe123123",
       "photo": [
-        "https://resim.epey.com/839868/b_xiaomi-13-pro-2.png",
         "https://resim.epey.com/223976/b_apple-iphone-11-4.jpg",
         "https://resim.epey.com/223976/b_apple-iphone-11-3.png",
         "https://resim.epey.com/223976/b_apple-iphone-11-7.png",
@@ -53,7 +52,7 @@
         "https://resim.epey.com/716503/b_apple-iphone-13-14.jpg"
       ],
       "name": "iPhone 12 Pro",
-      "price": "150",
+      "price": "149.99",
       "amount": 1
     },
     {
@@ -64,7 +63,40 @@
         "https://resim.epey.com/716503/b_apple-iphone-13-13.jpg"
       ],
       "name": "iPhone 15 Plus",
-      "price": "700",
+      "price": "699.99",
+      "amount": 1
+    },
+    {
+      "id": "1lgjIV_Gz3JN9PpLeUdRR",
+      "photo": [
+        "https://resim.epey.com/89863/b_apple-iphone-x-2.png",
+        "https://resim.epey.com/89863/b_apple-iphone-x-4.png",
+        "https://resim.epey.com/89863/b_apple-iphone-x-5.png"
+      ],
+      "name": "iPhone X",
+      "price": "99.99",
+      "amount": 1
+    },
+    {
+      "id": "qewD2hjUY5cBelfgffvpR",
+      "photo": [
+        "https://resim.epey.com/428494/b_redmi-note-9-pro-1.png",
+        "https://resim.epey.com/428494/b_redmi-note-9-pro-9.jpg",
+        "https://resim.epey.com/428494/b_redmi-note-9-pro-13.jpg"
+      ],
+      "name": "Xiaomi Redmi Note 9 Pro",
+      "price": "299.99",
+      "amount": 1
+    },
+    {
+      "id": "_zY0isCchyxvYr85ZrIuC",
+      "photo": [
+        "https://resim.epey.com/413835/b_samsung-galaxy-s20-ultra-1.png",
+        "https://resim.epey.com/413835/b_samsung-galaxy-s20-ultra-1.jpg",
+        "https://resim.epey.com/413835/b_samsung-galaxy-s20-ultra-6.jpg"
+      ],
+      "name": "Samsung Galaxy S20 Ultra",
+      "price": "599.99",
       "amount": 1
     }
   ],
