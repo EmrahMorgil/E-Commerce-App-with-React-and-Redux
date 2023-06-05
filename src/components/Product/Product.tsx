@@ -37,7 +37,7 @@ const Product: React.FC<basketItemType> = ({ product, page }) => {
       <div className={page == "adminpanel" ? "productsContainer" : "productsContainer reveal"}
         style={{ backgroundColor: "#1C1C1C" }}
       >
-        <a href={`/product/${product.id}`} style={{ textDecoration: "none" }}>
+        <Link to={`/product/${product?.id}`} style={{textDecoration: "none"}}>
           <div className="productsWrapper">
             <div className="banner-image">
               <img
@@ -48,7 +48,7 @@ const Product: React.FC<basketItemType> = ({ product, page }) => {
             <h4 style={{ color: "white" }}>{product?.name}</h4>
             <p>${product.price}</p>
           </div>
-        </a>
+        </Link>
         <div className="button-wrapper">
           {page == "adminpanel" ? (
             <div style={{display: "flex", gap: "1rem"}}>
@@ -66,9 +66,9 @@ const Product: React.FC<basketItemType> = ({ product, page }) => {
             </div>
           ) : (
             <>
-              <a href={`/product/${product.id}`} style={{ textDecoration: "none" }}>
+              <Link to={`/product/${product?.id}`}>
                 <button className="pbtn outline mr-3">DETAILS</button>
-              </a>
+              </Link>
               <AddBasketButton product={product} />
             </>
           )}
